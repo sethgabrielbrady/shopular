@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang='en' ng-app='shopular'>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Shopular</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
     <link href='style.css' rel='stylesheet'>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <h1>Shopular Deals!Shopular Deals!Shopular Deals!</h1>
+        <h1>Shopular Deals!Shopular Deals!Shopular Deals!</h1>
     </header>
     <main ng-controller='ShopController as shopCtrl'>
 
-      <table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Color</th>
-          </tr>
-          <tr ng-repeat='inventory in shopCtrl.inventory'>
-              <th>{{inventory.name}}</th>
-              <th>{{shopCtrl.priceAdj(inventory) | currency:"$":2}}
-                <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
-              <th>{{inventory.quantity}}</th>
-              <th>{{inventory.color}}</th>
-          </tr>
-        </thead>
-      </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Color</th>
+                </tr>
+                <tr ng-repeat='inventory in shopCtrl.inventory'>
+                    <th>{{inventory.name}}</th>
+                    <th>{{shopCtrl.priceAdj(inventory) | currency:"$":2}}
+                        <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
+                    <th>{{inventory.quantity}}</th>
+                    <th>{{inventory.color}}</th>
+                </tr>
+            </thead>
+        </table>
 
     </main>
+    <footer>
+        <p>Shopular has all the best Shoptastic deals!</p>
+    </footer>
 
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
+    <script src='/js/shop.module.js'></script>
+    <script src='/js/shop.controller.js'></script>
+</body>
 
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
-  <script src='/js/shop.module.js'></script>
-  <script src='/js/shop.controller.js'></script>
-  </body>
 </html>

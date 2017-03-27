@@ -6,7 +6,9 @@
 
 
 
-    // this.priceAdj = 0;
+  /**
+   * [Holds the inventory array and the priceAdj function ]
+   */
     function ShopController() {
 
         //TODO
@@ -111,6 +113,14 @@
 
 
         this.taxes = 0.0525;
+
+        /**
+         * takes in the inventory object, subtracts the discount property value from the
+         * price property value, add that to the price prop value multiplied
+         * by the the taxes variable.
+         * @param  {Object} item [uses the inventory object]
+         * @return {Number}      [returns a price adjusted for discounts and taxes
+         */
         this.priceAdj = function priceAdj(item) {
 
             return (item.price * this.taxes) - item.discount + item.price;

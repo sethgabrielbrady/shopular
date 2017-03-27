@@ -1,16 +1,28 @@
 header h1 {
-  text-align-last: center;
+    text-align-last: center;
+    width: 80%;
+    background-color: rgb(34, 181, 229);
+    margin: 0 auto;
 }
 
-table{
-  margin:0 auto;
-  width: 80%;
-  border: 1px solid rgb(125, 125, 125);
+table {
+    margin: 2.5% auto;
+    width: 80%;
+    border: 1px solid rgb(125, 125, 125);
 }
-thead{
-  font-size: 1em;
+
+thead {
+    font-size: 1em;
 }
 
 th {
     border: 1px solid rgb(125, 125, 125);
+}
+
+footer {
+    background-color: rgb(34, 181, 229);
+    font-size: 2em;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
 }
