@@ -3,7 +3,8 @@ header h1 {
 }
 
 table{
-  width: auto;
+  margin:0 auto;
+  width: 80%;
   border: 1px solid rgb(125, 125, 125);
 }
 thead{

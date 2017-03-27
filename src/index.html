@@ -21,7 +21,7 @@
           </tr>
           <tr ng-repeat='inventory in shopCtrl.inventory'>
               <th>{{inventory.name}}</th>
-              <th>{{inventory.price | currency:"$": 2}}</th>
+              <th>{{ (shopCtrl.taxes* inventory.price) +(inventory.price - inventory.discount)  | currency:"$": 2}}</th>
               <th>{{inventory.quantity}}</th>
               <th>{{inventory.color}}</th>
           </tr>

@@ -4,8 +4,11 @@
 angular.module('shopular')
   .controller('ShopController', ShopController);
 
+
+
  // this.priceAdj = 0;
   function ShopController(){
+
       //TODO
       //populate the table from the contrller
       this.inventory = [
@@ -24,8 +27,15 @@ angular.module('shopular')
 ];
 
 
+this.taxes = 0.0525;
+
+
+
 
   }//belongs to ShopController
+
+
+
 
 }());
 
