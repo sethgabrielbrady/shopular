@@ -1,0 +1,15 @@
+header h1 {
+  text-align-last: center;
+}
+
+table{
+  width: auto;
+  border: 1px solid rgb(125, 125, 125);
+}
+thead{
+  font-size: 1em;
+}
+
+th {
+    border: 1px solid rgb(125, 125, 125);
+}

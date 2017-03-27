@@ -6,6 +6,30 @@
     <link href='style.css' rel='stylesheet'>
   </head>
   <body>
+    <header>
+      <h1>Shopular Deals!Shopular Deals!Shopular Deals!</h1>
+    </header>
+    <main ng-controller='ShopController as shopCtrl'>
+
+      <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Color</th>
+          </tr>
+          <tr ng-repeat='inventory in shopCtrl.inventory'>
+              <th>{{inventory.name}}</th>
+              <th>{{inventory.price | currency:"$": 2}}</th>
+              <th>{{inventory.quantity}}</th>
+              <th>{{inventory.color}}</th>
+          </tr>
+        </thead>
+      </table>
+
+    </main>
+
 
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
   <script src='/js/shop.module.js'></script>
