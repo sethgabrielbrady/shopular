@@ -22,7 +22,7 @@ You have a shop with some items in its inventory. The shop owner has asked that 
 8. Only display the name, price, quantity and color
 9. Make sure the price includes tax and any discount! (Discounts are in dollars, not percent.)
 10. If the item has a discount, show this icon next to the price: discount icon
-11. Be sure to have all the proper HTML. Your page should have a <header>, <footer>, and <main> most   likely... anything else?
+11. Be sure to have all the proper HTML. Your page should have a header, footer, and main, most   likely... anything else?
 12. Don't worry about the styles too much, but make sure your table is easy to read:
   with zebra striped rows; and centered in the page with 80% width.
 
