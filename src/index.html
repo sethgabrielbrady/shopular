@@ -13,14 +13,14 @@
         <h1>Shopular Deals!Shopular Deals!Shopular Deals!</h1>
     </header>
     <main ng-controller='ShopController as shopCtrl'>
-
+      <button ng-click='shopCtrl.changeCountry()'>Country Change </button>
         <table>
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Color</th>
+                    <th class='change'>Color</th>
                 </tr>
                 <tr ng-repeat='inventory in shopCtrl.inventory'>
                     <th>{{inventory.name}}</th>

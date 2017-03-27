@@ -6,13 +6,13 @@
 
 
 
-  /**
-   * [Holds the inventory array and the priceAdj function ]
-   */
+    /**
+     * [Holds the inventory array and the priceAdj function ]
+     */
     function ShopController() {
+      //i really want to make this a toggle event
 
-        //TODO
-        //populate the table from the contrller
+
         this.inventory = [{
                 "id": 2957,
                 "name": "widget",
@@ -123,9 +123,29 @@
          */
         this.priceAdj = function priceAdj(item) {
 
-            return (item.price * this.taxes) - item.discount + item.price;
+            return ((item.price * this.taxes) - item.discount + item.price);
 
         };
+
+        this.changeCountry = function changeCountry() {
+            // console.log('country change click'); //this works
+            let item = this.inventory;
+            console.log(item.length);
+            for(let i=0; i<item.length; i++){
+              if (item.name === 'waste basket') {
+                console.log(i);
+                item.name = 'rubbish bin';
+              }
+              // item.price.value = item.price.value * 1.5;
+              // console.log(item.price);
+            }
+
+
+
+            document.querySelector('.change').innerHTML = 'Colour';
+
+        };
+
 
 
 
