@@ -1,23 +1,26 @@
-header {
+.page-header {
   width: 80%;
-  background-color: #22b5e5;
-  margin: 0 auto; }
-  header h1 {
+  background-color: #2980b9;
+  margin: 0 auto;
+  color: #f39c12; }
+  .page-header h1 {
     text-align-last: center; }
+    .page-header h1 small {
+      color: #f39c12; }
 
-main table {
-  margin: 2.5% auto;
-  width: 80%;
-  border: 1px solid #7d7d7d; }
-  main table thead {
+main .table {
+  max-width: 80%;
+  margin: 0 auto; }
+  main .table tbody {
     font-size: 1.25em; }
-    main table thead th {
-      border: 1px solid #7d7d7d; }
+main button {
+  background-color: #2980b9;
+  margin: 0 0 0.5% 10%;
+  color: #f39c12; }
 
 footer {
-  background-color: #22b5e5;
-  font-size: 2em;
-  text-align: center;
+  background-color: #2980b9;
+  height: 7em;
   width: 80%;
   margin: 0 auto; }
 

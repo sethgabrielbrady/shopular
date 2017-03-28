@@ -128,12 +128,22 @@
 
         };
 
+        /**
+         * Will change the word color to colour on the button click
+         * @return {VOID}
+         */
         this.changeCountry = function changeCountry() {
-            document.querySelector('.change').innerHTML = 'Colour';
+            document.querySelector('.change').innerHTML = 'COLOUR';
         };
 
         let clickCount = 0;
-        this.changePrice = function changePrice() {
+
+        /**
+         *Will change mulitply the inventory price value by 1.5 and change
+         *'waste basket' to 'rubbish bin' on the buttone click
+         * @return {VOID}
+         */
+        this.changeTable = function changeTable() {
             angular.forEach(this.inventory, function(item) {
                 if (clickCount === 0) {
                     item.price = item.price * 1.5;

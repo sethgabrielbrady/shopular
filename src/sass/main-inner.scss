@@ -1,16 +1,17 @@
 main {
-    table {
-        margin: 2.5% auto;
-        width: 80%;
-        border: 1px solid rgb(125, 125, 125);
+    .table{
 
-        thead {
+        max-width: 80%;
+        margin:0 auto;
+
+        tbody{
             font-size: 1.25em;
-
-            th {
-                border: 1px solid rgb(125, 125, 125);
-            }
         }
     }
-    
+
+    button {
+      background-color: rgb(41, 128, 185);
+      margin: 0 0 0.5% 10%;
+      color:rgb(243, 156, 18);
+    }
 }

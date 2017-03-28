@@ -9,18 +9,20 @@
 </head>
 
 <body>
-    <header>
-        <h1>Shopular Deals!Shopular Deals!Shopular Deals!</h1>
+    <header class="page-header">
+        <h1>Shopular <br>&nbsp
+       <small>The most Shoptastic deals in the World!</small></h1>
     </header>
-    <main ng-controller='ShopController as shopCtrl'>
-
-        <table>
-            <thead>
+    <main ng-controller='ShopController as shopCtrl' class ='inner'>
+      <button ng-click='shopCtrl.changeCountry(); shopCtrl.changeTable()' class="btn btn-default" type="button">
+      United Kingdom </button>
+        <table class="table table-striped">
+            <tbody>
                 <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th class='change'>Color</th>
+                    <th>NAME</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th class='change'>COLOR</th>
                 </tr>
                 <tr ng-repeat='inventory in shopCtrl.inventory'>
                     <th>{{inventory.name}}</th>
@@ -29,13 +31,12 @@
                     <th>{{inventory.quantity}}</th>
                     <th>{{inventory.color}}</th>
                 </tr>
-            </thead>
+            </tbody>
         </table>
-        <button ng-click='shopCtrl.changeCountry(); shopCtrl.changePrice()'>
-        Country Change </button>
+
     </main>
     <footer>
-        <p>Shopular has all the best Shoptastic deals!</p>
+
     </footer>
 
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
