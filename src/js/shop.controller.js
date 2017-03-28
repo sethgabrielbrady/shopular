@@ -4,17 +4,17 @@
     angular.module('shopular')
         .controller('ShopController', ShopController);
 
+    let taxes = 0.0575;
 
     /**
      * [Holds the inventory array and the priceAdj function ]
      */
     function ShopController() {
-        //i really want to make this a toggle event
+
+      let vm = this;
 
 
-
-
-        this.inventory = [{
+        vm.inventory = [{
                 "id": 2957,
                 "name": "widget",
                 "price": 32,
@@ -113,7 +113,7 @@
         ];
 
 
-        this.taxes = 0.0525;
+        vm.taxes = taxes;
 
         /**
          * takes in the inventory object, subtracts the discount property value from the
@@ -122,7 +122,7 @@
          * @param  {Object} item [uses the inventory object]
          * @return {Number}      [returns a price adjusted for discounts and taxes
          */
-        this.priceAdj = function priceAdj(item) {
+        vm.priceAdj = function priceAdj(item) {
 
             return ((item.price * this.taxes) - item.discount + item.price);
 
@@ -132,7 +132,7 @@
          * Will change the word color to colour on the button click
          * @return {VOID}
          */
-        this.changeCountry = function changeCountry() {
+        vm.changeCountry = function changeCountry() {
             document.querySelector('.change').innerHTML = 'COLOUR';
         };
 
@@ -143,8 +143,8 @@
          *'waste basket' to 'rubbish bin' on the buttone click
          * @return {VOID}
          */
-        this.changeTable = function changeTable() {
-            angular.forEach(this.inventory, function(item) {
+        vm.changeTable = function changeTable() {
+            angular.forEach(vm.inventory, function(item) {
                 if (clickCount === 0) {
                     item.price = item.price * 1.5;
                     clickCount++;

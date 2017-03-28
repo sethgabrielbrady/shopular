@@ -27,7 +27,8 @@
                 <tr ng-repeat='inventory in shopCtrl.inventory'>
                     <th>{{inventory.name}}</th>
                     <th>{{shopCtrl.priceAdj(inventory) | currency:"$":2}}
-                        <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
+                        <img ng-show='inventory.discount > 0'
+                         src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
                     <th>{{inventory.quantity}}</th>
                     <th>{{inventory.color}}</th>
                 </tr>
