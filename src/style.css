@@ -18,6 +18,8 @@ main button {
 main section {
   margin: 1% 0 1% 10%;
   width: 80%; }
+  main section input.ng-invalid.ng-touched {
+    border: 1px solid #ff0000; }
 
 footer {
   background-color: #2980b9;

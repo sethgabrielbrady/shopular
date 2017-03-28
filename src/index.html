@@ -24,7 +24,7 @@
                     <th>QUANTITY</th>
                     <th class='change'>COLOR</th>
                 </tr>
-                <tr ng-repeat='inventory in shopCtrl.inventory'>
+                <tr ng-repeat='inventory in shopCtrl.inventory | orderBy:"price"'>
                     <th>{{inventory.name}}</th>
                     <th>{{shopCtrl.priceAdj(inventory) | currency:"$":2}}
                         <img ng-show='inventory.discount > 0'

@@ -12,6 +12,7 @@
     function ShopController() {
 
       let vm = this;
+
       vm.newItem = {};
 
         vm.inventory = [{
@@ -170,8 +171,8 @@
 
           if (typeof(item)!== 'object' || typeof(item.name)!== 'string'
           || typeof(item.price) !== 'number' || typeof(item.discount)!== 'number'
-          || typeof(item.quantity) !== 'number' || typeof(item.quantity) === 'NaN'
-          || typeof(item.price) === 'NaN' || typeof(item.discount) === 'NaN'){
+          || typeof(item.quantity) !== 'number' || typeof(item.quantity) === NaN
+          || typeof(item.price) === NaN || typeof(item.discount) === NaN){
             return;
           }
 

@@ -15,6 +15,10 @@ main {
     section{
       margin: 1% 0 1% 10%;
       width:80%;
+
+        input.ng-invalid.ng-touched{
+        border: 1px solid #ff0000;
+      }
     }
 
 }
