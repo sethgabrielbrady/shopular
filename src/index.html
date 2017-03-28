@@ -13,7 +13,7 @@
         <h1>Shopular Deals!Shopular Deals!Shopular Deals!</h1>
     </header>
     <main ng-controller='ShopController as shopCtrl'>
-      <button ng-click='shopCtrl.changeCountry()'>Country Change </button>
+
         <table>
             <thead>
                 <tr>
@@ -31,7 +31,8 @@
                 </tr>
             </thead>
         </table>
-
+        <button ng-click='shopCtrl.changeCountry(); shopCtrl.changePrice()'>
+        Country Change </button>
     </main>
     <footer>
         <p>Shopular has all the best Shoptastic deals!</p>

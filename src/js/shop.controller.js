@@ -5,12 +5,13 @@
         .controller('ShopController', ShopController);
 
 
-
     /**
      * [Holds the inventory array and the priceAdj function ]
      */
     function ShopController() {
-      //i really want to make this a toggle event
+        //i really want to make this a toggle event
+
+
 
 
         this.inventory = [{
@@ -128,24 +129,24 @@
         };
 
         this.changeCountry = function changeCountry() {
-            // console.log('country change click'); //this works
-            let item = this.inventory;
-            console.log(item.length);
-            for(let i=0; i<item.length; i++){
-              if (item.name === 'waste basket') {
-                console.log(i);
-                item.name = 'rubbish bin';
-              }
-              // item.price.value = item.price.value * 1.5;
-              // console.log(item.price);
-            }
-
-
-
             document.querySelector('.change').innerHTML = 'Colour';
-
         };
 
+        let clickCount = 0;
+        this.changePrice = function changePrice() {
+            angular.forEach(this.inventory, function(item) {
+                if (clickCount === 0) {
+                    item.price = item.price * 1.5;
+                    clickCount++;
+                    console.log(item.price);
+
+                }
+                if (item.name === 'waste basket') {
+                    item.name = 'rubbish bin';
+                }
+
+            })
+        }
 
 
 
