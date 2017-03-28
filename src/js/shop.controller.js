@@ -12,7 +12,7 @@
     function ShopController() {
 
       let vm = this;
-
+      vm.newItem = {};
 
         vm.inventory = [{
                 "id": 2957,
@@ -123,9 +123,7 @@
          * @return {Number}      [returns a price adjusted for discounts and taxes
          */
         vm.priceAdj = function priceAdj(item) {
-
-            return ((item.price * this.taxes) - item.discount + item.price);
-
+            return ((item.price - item.discount) * (vm.taxes + 1));
         };
 
         /**
@@ -156,6 +154,27 @@
                 }
 
             })
+        }
+
+        /**
+         * Add a new object to the inventory array
+         * @param {String|Number} item
+         */
+        vm.addItem = function addItem(item) {
+          console.log(item);
+          // if (typeof(item)!== 'object' || typeof(item.name)!== 'string'
+          // || typeof(item.price) !== 'number'   || typeof(item.discount)!== 'number'
+          // || typeof(item.quantity) !== 'number'){
+          //   return;
+          // }
+
+          vm.inventory.push({
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity,
+            discount: item.discount,
+            color: item.color
+          });
         }
 
 

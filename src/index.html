@@ -35,19 +35,22 @@
             </tbody>
         </table>
 
-    </main>
+
 
     <section>
-    <form>
-      <input ='text' name='name' placeholder='Item name'>
-      <input ='text' name='price' placeholder='Item price'>
-      <input ='text' name='quantity' placeholder='Item  quantity'>
-      <input ='text' name='color' placeholder='Item color'>
-      <input ='text' name='discount' placeholder='Item discount'>
+    <form name='additem' ng-submit='additem.$valid && shopCtrl.addItem(shopCtrl.newItem)' novalidate>
+
+      <input ='text' name='name' placeholder='Item name' ng-model ='shopCtrl.newItem.name' required>
+      <input ='number' name='price' placeholder='Item price' ng-model ='shopCtrl.newItem.price' required>
+      <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='shopCtrl.newItem.quantity' required>
+      <input ='text' name='color' placeholder='Item color' ng-model='shopCtrl.newItem.color' required>
+      <input ='number' name='discount' placeholder='Item discount' ng-model ='shopCtrl.newItem.discount' required>
+
       <button ='submit' name='Add item'>Add Item</button>
+
     </form>
     </section>
-
+  </main>
     <footer>
 
     </footer>
