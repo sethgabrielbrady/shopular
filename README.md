@@ -6,7 +6,9 @@
 1. clone from github
 2. open in server
 
-
+add label to input boxes
+sort table (tbody)
+fix data styling
 
 
 

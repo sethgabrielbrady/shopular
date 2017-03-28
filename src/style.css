@@ -18,7 +18,12 @@ main button {
 main section {
   border: 2px solid #2980b9;
   margin: 1% 0 1% 10%;
-  width: 80%; }
+  width: 80%;
+  box-sizing: border-box; }
+  main section label {
+    width: 7%; }
+  main section input {
+    width: 100%; }
   main section input.ng-invalid.ng-touched {
     border: 1px solid #ff0000; }
 

@@ -21,14 +21,27 @@
 
 
       <section>
-    <form name='additem' ng-submit= 'additem.$valid && shopCtrl.addItem(shopCtrl.newItem)' novalidate>
-
+    <form name='additem' ng-submit= 'additem.$valid && shopCtrl.addItem(shopCtrl.newItem)'novalidate>
+    <aside>
+    <label for ='Item name'>Name</label>
     <input ='text' name='name' placeholder='Item name' ng-model ='shopCtrl.newItem.name' required>
+    </aside>
+    <aside>
+    <label for ='Item price'>Price</label>
     <input ='number' name='price' placeholder='Item price' ng-model ='shopCtrl.newItem.price' required>
+  </aside>
+  <aside>
+    <label for ='Item quantity'>Quantity</label>
     <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='shopCtrl.newItem.quantity' required>
+  </aside>
+  <aside>
+    <label for ='Item color'>Color</label>
     <input ='text' name='color' placeholder='Item color' ng-model='shopCtrl.newItem.color' required>
+  </aside>
+  <aside>
+    <label for ='Item discount'>Discount</label>
     <input ='number' name='discount' placeholder='Item discount' ng-model ='shopCtrl.newItem.discount' required>
-
+</aside>
     <button ='submit' name='Add item'>Add Item</button>
 
     </form>

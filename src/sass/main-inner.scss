@@ -22,10 +22,18 @@ main {
       border:2px solid rgb(41, 128, 185);
       margin: 1% 0 1% 10%;
       width:80%;
+      box-sizing: border-box;
+
+      label{
+        width:7%;
+      }
+        input{
+        width:100%;
+        }
 
         input.ng-invalid.ng-touched{
-        border: 1px solid #ff0000;
-      }
+          border: 1px solid #ff0000;
+        }
     }
 
 }
