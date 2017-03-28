@@ -162,11 +162,18 @@
          */
         vm.addItem = function addItem(item) {
           console.log(item);
-          // if (typeof(item)!== 'object' || typeof(item.name)!== 'string'
-          // || typeof(item.price) !== 'number'   || typeof(item.discount)!== 'number'
-          // || typeof(item.quantity) !== 'number'){
-          //   return;
-          // }
+
+          item.price = Number(item.price);
+          item.discount = Number(item.discount);
+          item.quantity = Number(item.quantity);
+
+
+          if (typeof(item)!== 'object' || typeof(item.name)!== 'string'
+          || typeof(item.price) !== 'number' || typeof(item.discount)!== 'number'
+          || typeof(item.quantity) !== 'number' || typeof(item.quantity) === 'NaN'
+          || typeof(item.price) === 'NaN' || typeof(item.discount) === 'NaN'){
+            return;
+          }
 
           vm.inventory.push({
             name: item.name,
