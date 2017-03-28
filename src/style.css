@@ -16,6 +16,7 @@ main .table {
 main button {
   margin: 0 0 0.5% 10%; }
 main section {
+  border: 2px solid #2980b9;
   margin: 1% 0 1% 10%;
   width: 80%; }
   main section input.ng-invalid.ng-touched {

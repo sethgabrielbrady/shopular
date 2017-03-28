@@ -14,21 +14,60 @@
        <small>The most Shoptastic deals in the World!</small></h1>
     </header>
     <main ng-controller='ShopController as shopCtrl' class='inner'>
+
         <button ng-click='shopCtrl.changeCountry(); shopCtrl.changeTable()' class="btn btn-default" type="button">
       United Kingdom </button>
+
+
+
+      <section>
+    <form name='additem' ng-submit= 'additem.$valid && shopCtrl.addItem(shopCtrl.newItem)' novalidate>
+
+    <input ='text' name='name' placeholder='Item name' ng-model ='shopCtrl.newItem.name' required>
+    <input ='number' name='price' placeholder='Item price' ng-model ='shopCtrl.newItem.price' required>
+    <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='shopCtrl.newItem.quantity' required>
+    <input ='text' name='color' placeholder='Item color' ng-model='shopCtrl.newItem.color' required>
+    <input ='number' name='discount' placeholder='Item discount' ng-model ='shopCtrl.newItem.discount' required>
+
+    <button ='submit' name='Add item'>Add Item</button>
+
+    </form>
+    </section>
+
+
+
+
+
+
+
+
         <table class="table table-striped">
             <tbody>
                 <tr>
-                    <th>NAME</th>
-                    <th>PRICE</th>
-                    <th>QUANTITY</th>
-                    <th class='change'>COLOR</th>
+                    <thead>
+                        <th>
+                            <a href="#" ng-click="shopCtrl.sortType= 'name'; sortReverse = !sortReverse">
+                        NAME
+                      </a>
+                        </th>
+                        <th>
+                            <a href="#" ng-click="shopCtrl.sortType = 'price'; sortReverse = !sortReverse">
+                        PRICE</a>
+                        </th>
+                        <th>
+                            <a href="#" ng-click="shopCtrl.sortType = 'quantity'; sortReverse = !sortReverse">
+                      QUANTITY</a>
+                        </th>
+                        <th>
+
+                      COLOR
+                        </th>
+                    </thead>
                 </tr>
-                <tr ng-repeat='inventory in shopCtrl.inventory | orderBy:"price"'>
+                <tr ng-repeat='inventory in shopCtrl.inventory | orderBy:shopCtrl.sortType:sortReverse'>
                     <th>{{inventory.name}}</th>
                     <th>{{shopCtrl.priceAdj(inventory) | currency:"$":2}}
-                        <img ng-show='inventory.discount > 0'
-                         src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
+                        <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
                     <th>{{inventory.quantity}}</th>
                     <th>{{inventory.color}}</th>
                 </tr>
@@ -37,20 +76,8 @@
 
 
 
-    <section>
-    <form name='additem' ng-submit= 'additem.$valid && shopCtrl.addItem(shopCtrl.newItem)' novalidate>
 
-      <input ='text' name='name' placeholder='Item name' ng-model ='shopCtrl.newItem.name' required>
-      <input ='number' name='price' placeholder='Item price' ng-model ='shopCtrl.newItem.price' required>
-      <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='shopCtrl.newItem.quantity' required>
-      <input ='text' name='color' placeholder='Item color' ng-model='shopCtrl.newItem.color' required>
-      <input ='number' name='discount' placeholder='Item discount' ng-model ='shopCtrl.newItem.discount' required>
-
-      <button ='submit' name='Add item'>Add Item</button>
-
-    </form>
-    </section>
-  </main>
+    </main>
     <footer>
 
     </footer>

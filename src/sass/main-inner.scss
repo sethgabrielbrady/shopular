@@ -1,11 +1,17 @@
 main {
+
+
     .table {
+
         max-width: 80%;
         margin: 0 auto;
+
 
         tbody {
             font-size: 1.25em;
         }
+
+
     }
 
     button {
@@ -13,6 +19,7 @@ main {
     }
 
     section{
+      border:2px solid rgb(41, 128, 185);
       margin: 1% 0 1% 10%;
       width:80%;
 

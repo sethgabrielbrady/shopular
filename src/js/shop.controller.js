@@ -12,6 +12,8 @@
     function ShopController() {
 
       let vm = this;
+      vm.sortType = 'price';
+      vm.sortReverse = false;
 
       vm.newItem = {};
 
@@ -113,7 +115,7 @@
             }
         ];
 
-
+        
         vm.taxes = taxes;
 
         /**
@@ -185,6 +187,9 @@
           });
         }
 
+
+
+          // return typeCol;
 
 
     } //belongs to ShopController
