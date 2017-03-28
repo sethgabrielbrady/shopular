@@ -1,17 +1,16 @@
 main {
-    .table{
-
+    .table {
         max-width: 80%;
-        margin:0 auto;
+        margin: 0 auto;
 
-        tbody{
+        tbody {
             font-size: 1.25em;
         }
     }
 
     button {
-      background-color: rgb(41, 128, 185);
-      margin: 0 0 0.5% 10%;
-      color:rgb(243, 156, 18);
+        background-color: rgb(41, 128, 185);
+        margin: 0 0 0.5% 10%;
+        color: rgb(243, 156, 18);
     }
 }
