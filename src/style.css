@@ -1,28 +1,27 @@
-header h1 {
-    text-align-last: center;
-    width: 80%;
-    background-color: rgb(34, 181, 229);
-    margin: 0 auto;
-}
+.page-header {
+  width: 80%;
+  background-color: #2980b9;
+  margin: 0 auto;
+  color: #f39c12; }
+  .page-header h1 {
+    text-align-last: center; }
+    .page-header h1 small {
+      color: #f39c12; }
 
-table {
-    margin: 2.5% auto;
-    width: 80%;
-    border: 1px solid rgb(125, 125, 125);
-}
-
-thead {
-    font-size: 1em;
-}
-
-th {
-    border: 1px solid rgb(125, 125, 125);
-}
+main .table {
+  max-width: 80%;
+  margin: 0 auto; }
+  main .table tbody {
+    font-size: 1.25em; }
+main button {
+  background-color: #2980b9;
+  margin: 0 0 0.5% 10%;
+  color: #f39c12; }
 
 footer {
-    background-color: rgb(34, 181, 229);
-    font-size: 2em;
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-}
+  background-color: #2980b9;
+  height: 7em;
+  width: 80%;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=style.css.map */

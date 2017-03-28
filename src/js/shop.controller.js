@@ -5,14 +5,15 @@
         .controller('ShopController', ShopController);
 
 
-
-  /**
-   * [Holds the inventory array and the priceAdj function ]
-   */
+    /**
+     * [Holds the inventory array and the priceAdj function ]
+     */
     function ShopController() {
+        //i really want to make this a toggle event
 
-        //TODO
-        //populate the table from the contrller
+
+
+
         this.inventory = [{
                 "id": 2957,
                 "name": "widget",
@@ -123,9 +124,39 @@
          */
         this.priceAdj = function priceAdj(item) {
 
-            return (item.price * this.taxes) - item.discount + item.price;
+            return ((item.price * this.taxes) - item.discount + item.price);
 
         };
+
+        /**
+         * Will change the word color to colour on the button click
+         * @return {VOID}
+         */
+        this.changeCountry = function changeCountry() {
+            document.querySelector('.change').innerHTML = 'COLOUR';
+        };
+
+        let clickCount = 0;
+
+        /**
+         *Will change mulitply the inventory price value by 1.5 and change
+         *'waste basket' to 'rubbish bin' on the buttone click
+         * @return {VOID}
+         */
+        this.changeTable = function changeTable() {
+            angular.forEach(this.inventory, function(item) {
+                if (clickCount === 0) {
+                    item.price = item.price * 1.5;
+                    clickCount++;
+                    console.log(item.price);
+
+                }
+                if (item.name === 'waste basket') {
+                    item.name = 'rubbish bin';
+                }
+
+            })
+        }
 
 
 
