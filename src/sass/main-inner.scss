@@ -8,9 +8,25 @@ main {
         }
     }
 
-    button {
-        background-color: rgb(41, 128, 185);
-        margin: 0 0 0.5% 10%;
-        color: rgb(243, 156, 18);
+    button.btn {
+        margin: 0.5% 0 0.5% 10%;
+    }
+
+    button .add {
+        margin: none;
+    }
+
+    section {
+        margin: 1% 0 1% 10%;
+        width: 80%;
+        box-sizing: border-box;
+
+        input {
+            width: 100%;
+        }
+
+        input.ng-invalid.ng-touched {
+            border: 1px solid #ff0000;
+        }
     }
 }

@@ -1,34 +1,77 @@
 <!DOCTYPE html>
 <html lang='en' ng-app='shopular'>
 
-<head>
-    <meta charset="utf-8">
-    <title>Shopular</title>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='style.css' rel='stylesheet'>
-</head>
+  <head>
+      <meta charset='utf-8'>
+      <title>Shopular</title>
+      <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet'>
+      <link href='style.css' rel='stylesheet'>
+  </head>
 
-<body>
-    <header class="page-header">
-        <h1>Shopular <br>&nbsp
+  <body>
+
+    <header class='page-header'>
+        <h1>SHOPULAR <br>&nbsp
        <small>The most Shoptastic deals in the World!</small></h1>
     </header>
+
     <main ng-controller='ShopController as shopCtrl' class='inner'>
-        <button ng-click='shopCtrl.changeCountry(); shopCtrl.changeTable()' class="btn btn-default" type="button">
-      United Kingdom </button>
-        <table class="table table-striped">
+
+        <button ng-click='shopCtrl.changeCountry(); shopCtrl.changeTable()' class='btn btn-default' type='button'>
+          United Kingdom </button>
+
+          <section>
+              <form name='additem' ng-submit='additem.$valid && shopCtrl.addItem(shopCtrl.newItem)'novalidate>
+                  <aside>
+                      <label for ='Item name'>Name</label>
+                      <input ='text' name='name' placeholder='Item name' ng-model ='shopCtrl.newItem.name' required>
+                  </aside>
+                  <aside>
+                      <label for ='Item price'>Price</label>
+                      <input ='number' name='price' placeholder='Item price' ng-model ='shopCtrl.newItem.price' required>
+                  </aside>
+                <aside>
+                      <label for ='Item quantity'>Quantity</label>
+                      <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='shopCtrl.newItem.quantity' required>
+                </aside>
+                <aside>
+                      <label for ='Item color'>Color</label>
+                      <input ='text' name='color' placeholder='Item color' ng-model='shopCtrl.newItem.color' required>
+                </aside>
+                <aside>
+                      <label for ='Item discount'>Discount</label>
+                      <input ='number' name='discount' placeholder='Item discount' ng-model ='shopCtrl.newItem.discount' required>
+                </aside>
+              <button class='add' ='submit' name='Add item'>Add Item</button>
+            </form>
+          </section>
+
+        <table class='table table-striped'>
+            <tr>
+                <thead>
+                    <th>
+                        <a href='#' ng-click='shopCtrl.sortType= "name"; sortReverse = !sortReverse'>
+                        NAME
+                      </a>
+                    </th>
+                    <th>
+                        <a href='#' ng-click='shopCtrl.sortType = "price"; sortReverse = !sortReverse'>
+                        PRICE</a>
+                    </th>
+                    <th>
+                        <a href='#' ng-click='shopCtrl.sortType = "quantity"; sortReverse = !sortReverse'>
+                      QUANTITY</a>
+                    </th>
+                    <th class='change'>
+                        COLOR
+                    </th>
+                </thead>
+            </tr>
             <tbody>
-                <tr>
-                    <th>NAME</th>
-                    <th>PRICE</th>
-                    <th>QUANTITY</th>
-                    <th class='change'>COLOR</th>
-                </tr>
-                <tr ng-repeat='inventory in shopCtrl.inventory'>
+                <tr ng-repeat='inventory in shopCtrl.inventory | orderBy:shopCtrl.sortType:sortReverse'>
                     <th>{{inventory.name}}</th>
-                    <th>{{shopCtrl.priceAdj(inventory) | currency:"$":2}}
-                        <img ng-show='inventory.discount > 0'
-                         src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
+                    <th>{{shopCtrl.priceAdj(inventory) | currency:'$':2}}
+                        <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
                     <th>{{inventory.quantity}}</th>
                     <th>{{inventory.color}}</th>
                 </tr>
@@ -36,6 +79,7 @@
         </table>
 
     </main>
+
     <footer>
 
     </footer>
@@ -43,6 +87,6 @@
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
     <script src='/js/shop.module.js'></script>
     <script src='/js/shop.controller.js'></script>
-</body>
+  </body>
 
 </html>

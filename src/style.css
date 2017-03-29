@@ -13,10 +13,18 @@ main .table {
   margin: 0 auto; }
   main .table tbody {
     font-size: 1.25em; }
-main button {
-  background-color: #2980b9;
-  margin: 0 0 0.5% 10%;
-  color: #f39c12; }
+main button.btn {
+  margin: 0.5% 0 0.5% 10%; }
+main button .add {
+  margin: none; }
+main section {
+  margin: 1% 0 1% 10%;
+  width: 80%;
+  box-sizing: border-box; }
+  main section input {
+    width: 100%; }
+  main section input.ng-invalid.ng-touched {
+    border: 1px solid #ff0000; }
 
 footer {
   background-color: #2980b9;
