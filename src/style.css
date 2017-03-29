@@ -4,9 +4,13 @@
   margin: 0 auto;
   color: #f39c12; }
   .page-header h1 {
-    text-align-last: center; }
+    text-align-last: left; }
     .page-header h1 small {
       color: #f39c12; }
+  .page-header form {
+    width: 10%; }
+    .page-header form input .form-control {
+      width: auto; }
 
 main .table {
   max-width: 80%;

@@ -5,7 +5,8 @@
 1. clone from github
 2. open in server in the source directory
 
-
+## Known Issues
+Removing an item only removes it from the table, not localStorage
 
 ### Front End 03/29/17
 
@@ -27,8 +28,8 @@ The service should have a method for logging in which accepts a username and ret
 There should be another method for getting the logged in user (return null if the user is not logged in)
 Add a new Controller for the information in the page header (what would be a good name?)
 Show the current user's name in the <header> as well as the time they logged in using this format: "Apr 10 - 9:15 AM"
-EPIC Mode
 
+##EPIC Mode
 Allow the user to input a state (two digits) and have the system calculate sales tax from that information
 Where will you get the tax rate from?
 What sort of Angular entity will you use?

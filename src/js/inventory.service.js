@@ -25,7 +25,7 @@
             if (typeof(item) !== 'object' || typeof(item.name) !== 'string' ||
                 typeof(item.price) !== 'number' || typeof(item.discount) !== 'number' ||
                 typeof(item.quantity) !== 'number' || !(item.quantity) ||
-                !(item.price) || !(item.discount) || typeof(item.color) !== 'string') {
+                !(item.price) || typeof(item.color) !== 'string') {
                 return;
             }
 

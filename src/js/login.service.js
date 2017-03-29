@@ -1,37 +1,41 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular.module('shopular').factory('LoginService', LoginService);
+    angular.module('shopular').factory('LoginService', LoginService);
 
-  function LoginService() {
+    function LoginService() {
+        console.log('Hello from login service');
 
+        let newLogin = {};
 
-  let loginData = JSON.parse(localStorage.getItem('loginData')) || [];
+        let loginData = JSON.parse(localStorage.getItem('loginData')) || [];
 
-    //this will be my login
-      function login(info){
-        let loginTime = Date.now();
+        //this will be my login
+        function login(info) {
+          console.log(info);
+            let time = Date.now();
 
-        loginData.push({
-          loginName: info.loginName,
-          loginPass: info.loginPass,
-          logintime: loginTime
-        });
-        localStorage.setItem('loginData', angular.toJson(login));
+            loginData.push({
+                name: info.name,
+                pass: info.pass,
+                time: time
+            });
+
+            localStorage.setItem('loginData', angular.toJson(login));
         }
 
-        function getLogin(){
-          return loginData;
+        function getLogin() {
+            return loginData;
         }
 
 
 
-    return {
-      login: login,
-      getLogin: getLogin
-    };
+        return {
+            login: login,
+            getLogin: getLogin
+        };
 
 
 
-  }
+    }
 }());

@@ -10,9 +10,21 @@
 
   <body>
 
-    <header class='page-header'>
-        <h1>SHOPULAR <br>&nbsp
-       <small>The most Shoptastic deals in the World!</small></h1>
+    <header class='page-header'ng-controller='LoginController as loginCtrl'>
+        <h1>SHOPULAR <br>
+        <small>The most Shoptastic deals in the World!</small></h1>
+
+        <form  name ='newlogin' class='form-group form-inline' ng-submit='newlogin.$valid && loginCtrl.login(loginCtrl.newLogin);'>
+
+          <label for ='User Name'>User Name</label>
+          <input ='text' name='name' placeholder='User Name' class='form-control' ng-model ='loginCtrl.newLogin.name'>
+
+          <label for ='Password'>Password</label>
+          <input ='text' name='pass' placeholder='Password' class='form-control' ng-model ='loginCtrl.newLogin.pass'>
+
+          <button class='btn btn-default' ='submit' name='Login'>Login</button>
+        </form>
+
     </header>
 
     <main ng-controller='InventoryController as invenCtrl' class='inner'>
@@ -89,6 +101,8 @@
     <script src='/js/shop.module.js'></script>
     <script src='/js/inventory.controller.js'></script>
     <script src='/js/inventory.service.js'></script>
+    <script src='/js/login.controller.js'></script>
+    <script src='/js/login.service.js'></script>
   </body>
 
 </html>
