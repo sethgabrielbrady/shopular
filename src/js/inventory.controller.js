@@ -97,12 +97,13 @@
                 discount: item.discount,
                 color: item.color
             });
+            vm.newItem;
         }
 
         /**
          * Grabs an array as an argument, looks for the index and if the
          * quantity is equal to 0, will allow for the deletion of the row
-         * @param  {Array} item 
+         * @param  {Array} item
          * @return {Voif}
          */
         vm.removeItem = function removeItem(item){
