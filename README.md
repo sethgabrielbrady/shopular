@@ -17,15 +17,6 @@ We don't build single-controller applications. We'll need to combine a lot of di
 
 The shop owner from your previous assignments has noticed that your item inventory application resets all data when the page is refreshed! Oops. Let's persist the data to localStorage (for now). We want to separate the logic for data persistence and UI interactions into Services and Controllers. Additionally, the owner plans to expand this system. For now he's the only user, but he'd like you to display his name and the login time at the top of the page.
 
-### Item Management
-
-2. This service only needs three methods: one to get all data, one to save a new item, and one to update all items.
-3. You should use the "factory" pattern
-4. Use this new service in the controller for your items (instead of our in-controller data from last time)
-5. Whenever an item is added, save the data using this new Service
-6. If you allow updating of items (EPIC Mode from last time), use the proper Service method for that
-
-
 
 ### Adventure Mode
 
