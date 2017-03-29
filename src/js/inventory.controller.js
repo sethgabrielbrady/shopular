@@ -2,14 +2,14 @@
     'use strict';
 
     angular.module('shopular')
-        .controller('ShopController', ShopController);
+        .controller('InventoryController', InventoryController);
 
     let taxes = 0.0575;
 
     /**
      * [Holds the inventory array and the priceAdj function ]
      */
-    function ShopController() {
+    function InventoryController() {
 
         let clickCount = 0;
         let vm = this;
@@ -85,8 +85,8 @@
 
             if (typeof(item) !== 'object' || typeof(item.name) !== 'string' ||
                 typeof(item.price) !== 'number' || typeof(item.discount) !== 'number' ||
-                typeof(item.quantity) !== 'number' || typeof(item.quantity) === NaN ||
-                typeof(item.price) === NaN || typeof(item.discount) === NaN) {
+                typeof(item.quantity) !== 'number' || !(item.quantity) ||
+                !(item.price ) || !(item.discount) ){
                 return;
             }
 
@@ -99,6 +99,21 @@
             });
         }
 
+        /**
+         * Grabs an array as an argument, looks for the index and if the
+         * quantity is equal to 0, will allow for the deletion of the row
+         * @param  {Array} item 
+         * @return {Voif}
+         */
+        vm.removeItem = function removeItem(item){
+          if (item.quantity === 0){
+            let index = vm.inventory.indexOf(item);
+            console.log(index);
+            vm.inventory.splice(index, 1);
+          }
 
-    } //belongs to ShopController
+        }
+
+
+    }
 }());
