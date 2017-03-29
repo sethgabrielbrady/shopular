@@ -71,7 +71,7 @@
                     <th>{{invenCtrl.priceAdj(inventory) | currency:'$':2}}
                         <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'>
                     </th>
-                    <th>{{inventory.quantity}}
+                    <th>
                       <input type="number" name="input" ng-model="inventory.quantity" min="0" class="quantity"> </th>
                     <th>{{inventory.color}}</th>
                     <th><button ng-click='invenCtrl.removeItem(inventory)' class='btn btn-default remove' type='button'>
