@@ -5,7 +5,13 @@ main {
 
         tbody {
             font-size: 1.25em;
+
+            input.quantity{
+              margin-left:2em;
+              width:4em;
+            }
         }
+
     }
 
     button.btn {

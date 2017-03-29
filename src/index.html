@@ -30,7 +30,7 @@
                   <input ='number' name='price' placeholder='Item price' ng-model ='invenCtrl.newItem.price' required>
 
                   <label for ='Item quantity'>Quantity</label>
-                  <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='invenCtrl.newItem.quantity' required>
+                  <input ='number' name='quantity' placeholder='Item quantity' ng-model ='invenCtrl.newItem.quantity' required>
 
                   <label for ='Item color'>Color</label>
                   <input ='text' name='color' placeholder='Item color' ng-model='invenCtrl.newItem.color' required>
@@ -38,7 +38,7 @@
                   <label for ='Item discount'>Discount</label>
                   <input ='number' name='discount' placeholder='Item discount' ng-model ='invenCtrl.newItem.discount' required>
 
-                  <button class='add' ='submit' name='Add item'>Add Item</button>
+                  <button class='add btn btn-default' ='submit' name='Add item'>Add Item</button>
 
                   <p ng-show='additem.name.$touched && !additem.name.$valid'>Please provide a name.</p>
                   <p ng-show='additem.quantity.$touched && !additem.quantity.$valid'>Please provide a quantity.</p>
@@ -60,7 +60,7 @@
                     </th>
                     <th>
                         <a href='#' ng-click='invenCtrl.sortType = "quantity"; sortReverse = !sortReverse'>QUANTITY</a>
-                      </th>
+                    </th>
                     <th class='change'>COLOR
                     </th>
                 </thead>
@@ -71,8 +71,11 @@
                     <th>{{invenCtrl.priceAdj(inventory) | currency:'$':2}}
                         <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'>
                     </th>
-                    <th>{{inventory.quantity}}</th>
+                    <th>{{inventory.quantity}}
+                      <input type="number" name="input" ng-model="inventory.quantity" min="0" class="quantity"> </th>
                     <th>{{inventory.color}}</th>
+                    <th><button ng-click='invenCtrl.removeItem(inventory)' class='btn btn-default remove' type='button'>
+                      Remove</button></th>
                 </tr>
             </tbody>
         </table>
