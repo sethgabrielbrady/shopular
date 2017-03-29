@@ -19,7 +19,6 @@ The shop owner from your previous assignments has noticed that your item invento
 
 ### Item Management
 
-1. Create a Service to handle saving the item data to localStorage
 2. This service only needs three methods: one to get all data, one to save a new item, and one to update all items.
 3. You should use the "factory" pattern
 4. Use this new service in the controller for your items (instead of our in-controller data from last time)

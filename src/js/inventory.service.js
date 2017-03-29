@@ -23,6 +23,7 @@
             { "id": 683, "name": "pillow", "price": 27, "quantity": 10, "color": "black", "discount": 12 }
             ];
 
+            // inventory = JSON.parse(localStorage.getItem('inventory'));
 
         /**
          * Add a new object to the inventory array. Will convert a string to a
@@ -52,7 +53,7 @@
                 discount: item.discount,
                 color: item.color
             });
-            newItem = {};
+            // localStorage.setItem('inventory', angular.toJson(inventory));
             // invenCtrl.newItem.$setUntouched();
         }
 
@@ -65,8 +66,6 @@
             return inventory;
         }
 
-
-
         /**
          * Grabs an array as an argument, looks for the index and if the
          * quantity is equal to 0, will allow for the deletion of the row
@@ -78,8 +77,12 @@
                 let index = inventory.indexOf(item);
                 inventory.splice(index, 1);
             }
+          };
 
-        };
+
+
+
+
 
 
 

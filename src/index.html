@@ -21,7 +21,7 @@
           United Kingdom </button>
 
           <section>
-              <form  name='additem' ng-submit='additem.$valid && invenCtrl.addItem(invenCtrl.newItem)'novalidate>
+              <form  name='additem' ng-submit='additem.$valid && invenCtrl.addItem(invenCtrl.newItem); additem.$setPristine(); additem.$setUntouched();'novalidate>
 
                   <label for ='Item name'>Name</label>
                   <p ng-show='additem.name.$touched && !additem.name.$valid'>Please provide a name.</p>
