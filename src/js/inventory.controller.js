@@ -20,8 +20,8 @@
         vm.sortType = 'price';
         vm.sortReverse = false;
         vm.newItem = {};
-
         vm.inventory = InventoryService.getInventory();
+
 
         /**
          * takes in the inventory object, subtracts the discount property value from the
@@ -41,6 +41,7 @@
         vm.changeCountry = function changeCountry() {
             document.querySelector('.change').innerHTML = 'COLOUR';
         };
+
 
         /**
          *Will change mulitply the inventory price value by 1.5 and change
@@ -74,19 +75,12 @@
         };
 
 
-        /**
-         * Grabs an array as an argument, looks for the index and if the
-         * quantity is equal to 0, will allow for the deletion of the row
-         * @param  {Array} item
-         * @return {Void}
-         */
-        vm.removeItem = function removeItem(item){
-          if (item.quantity === 0){
-            let index = vm.inventory.indexOf(item);
-            vm.inventory.splice(index, 1);
-          }
 
-        };
+        vm.removeItem = function removeItem(item){
+          InventoryService.removeItem(item);
+          };
+
+
 
 
     }
