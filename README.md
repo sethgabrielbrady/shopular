@@ -4,7 +4,7 @@
 
 ### Set Up
 1. clone from github
-2. open in server
+2. open in server in the source directory
 
 
 ### Front End 03/28/17
@@ -24,12 +24,14 @@ our browser.
 bootstrap, sass, angular, git,
 
 ### Current Build
+
 The current build displays data in the form of a table on the view. Currently the data
 is an array of objects held inside the controller.js file. Each object contains
 id, name, price, quantity, color, and discount properties. On the page is a button
 that when clicked will change the price to British Pounds, the item "waste basket"
 to "rubbish bin", and the word color to "colour", which is located in the
-table title.
+table title. In addition, the user is able change the order in which the items are
+displayed by clicked on the table header. The user is also able to change the quantity of items, remove any item that has a quantity of 0, and is able to add new items to the table. 
 
 ### TODO
 Even though the current build will only allow for 1 click event to change, Id like

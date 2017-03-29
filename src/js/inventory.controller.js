@@ -76,8 +76,10 @@
         /**
          * Add a new object to the inventory array. Will convert a string to a
          * number for price, discount, and quantity inputs
-         * @param {String|Number} item
+         * @param {Object} item
+         * @return {VOID}
          */
+
         vm.addItem = function addItem(item) {
             item.price = Number(item.price);
             item.discount = Number(item.discount);
@@ -86,30 +88,33 @@
             if (typeof(item) !== 'object' || typeof(item.name) !== 'string' ||
                 typeof(item.price) !== 'number' || typeof(item.discount) !== 'number' ||
                 typeof(item.quantity) !== 'number' || !(item.quantity) ||
-                !(item.price ) || !(item.discount) ){
+                !(item.price ) || !(item.discount) || typeof(item.color) !== 'string' ){
                 return;
             }
 
+            let id = Date.now();
+
             vm.inventory.push({
+                id: id,
                 name: item.name,
                 price: item.price,
                 quantity: item.quantity,
                 discount: item.discount,
                 color: item.color
             });
-            vm.newItem;
+            vm.newItem = {};
+            // invenCtrl.newItem.$setUntouched();
         }
 
         /**
          * Grabs an array as an argument, looks for the index and if the
          * quantity is equal to 0, will allow for the deletion of the row
          * @param  {Array} item
-         * @return {Voif}
+         * @return {Void}
          */
         vm.removeItem = function removeItem(item){
           if (item.quantity === 0){
             let index = vm.inventory.indexOf(item);
-            console.log(index);
             vm.inventory.splice(index, 1);
           }
 

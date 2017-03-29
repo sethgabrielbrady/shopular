@@ -17,41 +17,40 @@
 
     <main ng-controller='InventoryController as invenCtrl' class='inner'>
 
-        <button ng-click='invenCtrl.changeCountry(); invenCtrl.changeTable()' class='btn btn-default' type='button'>
+        <button ng-click='invenCtrl.changeCountry(); invenCtrl.changeTable();' class='btn btn-default' type='button'>
           United Kingdom </button>
 
           <section>
-              <form name='additem' ng-submit='additem.$valid && invenCtrl.addItem(invenCtrl.newItem)'novalidate>
+              <form  name='additem' ng-submit='additem.$valid && invenCtrl.addItem(invenCtrl.newItem)'novalidate>
 
                   <label for ='Item name'>Name</label>
+                  <p ng-show='additem.name.$touched && !additem.name.$valid'>Please provide a name.</p>
                   <input ='text' name='name' placeholder='Item name' ng-model ='invenCtrl.newItem.name' required>
 
                   <label for ='Item price'>Price</label>
+                  <p ng-show='additem.price.$touched && !additem.price.$valid'>Please provide a price.</p>
                   <input ='number' name='price' placeholder='Item price' ng-model ='invenCtrl.newItem.price' required>
 
                   <label for ='Item quantity'>Quantity</label>
+                  <p ng-show='additem.quantity.$touched && !additem.quantity.$valid'>Please provide a quantity.</p>
                   <input ='number' name='quantity' placeholder='Item quantity' ng-model ='invenCtrl.newItem.quantity' required>
 
                   <label for ='Item color'>Color</label>
+                  <p ng-show='additem.color.$touched &&!additem.color.$valid'>Please provide a color.</p>
                   <input ='text' name='color' placeholder='Item color' ng-model='invenCtrl.newItem.color' required>
 
                   <label for ='Item discount'>Discount</label>
+                  <p ng-show='additem.discount.$touched && !additem.discount.$valid'>Please enter '0' for no discount.</p>
                   <input ='number' name='discount' placeholder='Item discount' ng-model ='invenCtrl.newItem.discount' required>
 
                   <button class='add btn btn-default' ='submit' name='Add item'>Add Item</button>
-
-                  <p ng-show='additem.name.$touched && !additem.name.$valid'>Please provide a name.</p>
-                  <p ng-show='additem.quantity.$touched && !additem.quantity.$valid'>Please provide a quantity.</p>
-                  <p ng-show='additem.discount.$touched && !additem.discount.$valid'>Please enter '0' for no discount.</p>
-                  <p ng-show='additem.price.$touched && !additem.price.$valid'>Please provide a price.</p>
-                  <p ng-show='additem.color.$touched &&!additem.color.$valid'>Please provide a color.</p>
 
                 </form>
           </section>
 
         <table class='table table-striped'>
-            <tr>
-                <thead>
+            <thead>
+                <tr>
                     <th>
                         <a href='#' ng-click='invenCtrl.sortType= "name"; sortReverse = !sortReverse'>NAME</a>
                     </th>
@@ -63,8 +62,8 @@
                     </th>
                     <th class='change'>COLOR
                     </th>
-                </thead>
-            </tr>
+                </tr>
+            </thead>
             <tbody>
                 <tr ng-repeat='inventory in invenCtrl.inventory | orderBy:invenCtrl.sortType:sortReverse'>
                     <th>{{inventory.name}}</th>
@@ -72,7 +71,7 @@
                         <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'>
                     </th>
                     <th>
-                      <input type="number" name="input" ng-model="inventory.quantity" min="0" class="quantity"> </th>
+                      <input type='number' name="input" ng-model='inventory.quantity' min="0" class='quantity'> </th>
                     <th>{{inventory.color}}</th>
                     <th><button ng-click='invenCtrl.removeItem(inventory)' class='btn btn-default remove' type='button'>
                       Remove</button></th>
