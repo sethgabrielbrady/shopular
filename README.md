@@ -14,7 +14,6 @@ data binding.``
 
 ## TODO
 
-0. add text fields to incorrect inputs
 1. Allow the owner to change the quantity of an item up or down in the table.
 2. Allow an owner to remove an item from the inventory, but not if there is any quantity remaining.
 

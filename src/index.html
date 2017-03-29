@@ -15,63 +15,62 @@
        <small>The most Shoptastic deals in the World!</small></h1>
     </header>
 
-    <main ng-controller='ShopController as shopCtrl' class='inner'>
+    <main ng-controller='InventoryController as invenCtrl' class='inner'>
 
-        <button ng-click='shopCtrl.changeCountry(); shopCtrl.changeTable()' class='btn btn-default' type='button'>
+        <button ng-click='invenCtrl.changeCountry(); invenCtrl.changeTable()' class='btn btn-default' type='button'>
           United Kingdom </button>
 
           <section>
-              <form name='additem' ng-submit='additem.$valid && shopCtrl.addItem(shopCtrl.newItem)'novalidate>
-                  <aside>
-                      <label for ='Item name'>Name</label>
-                      <input ='text' name='name' placeholder='Item name' ng-model ='shopCtrl.newItem.name' required>
-                  </aside>
-                  <aside>
-                      <label for ='Item price'>Price</label>
-                      <input ='number' name='price' placeholder='Item price' ng-model ='shopCtrl.newItem.price' required>
-                  </aside>
-                <aside>
-                      <label for ='Item quantity'>Quantity</label>
-                      <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='shopCtrl.newItem.quantity' required>
-                </aside>
-                <aside>
-                      <label for ='Item color'>Color</label>
-                      <input ='text' name='color' placeholder='Item color' ng-model='shopCtrl.newItem.color' required>
-                </aside>
-                <aside>
-                      <label for ='Item discount'>Discount</label>
-                      <input ='number' name='discount' placeholder='Item discount' ng-model ='shopCtrl.newItem.discount' required>
-                </aside>
-              <button class='add' ='submit' name='Add item'>Add Item</button>
-            </form>
+              <form name='additem' ng-submit='additem.$valid && invenCtrl.addItem(invenCtrl.newItem)'novalidate>
+
+                  <label for ='Item name'>Name</label>
+                  <input ='text' name='name' placeholder='Item name' ng-model ='invenCtrl.newItem.name' required>
+
+                  <label for ='Item price'>Price</label>
+                  <input ='number' name='price' placeholder='Item price' ng-model ='invenCtrl.newItem.price' required>
+
+                  <label for ='Item quantity'>Quantity</label>
+                  <input ='number' name='quantity' placeholder='Item  quantity' ng-model ='invenCtrl.newItem.quantity' required>
+
+                  <label for ='Item color'>Color</label>
+                  <input ='text' name='color' placeholder='Item color' ng-model='invenCtrl.newItem.color' required>
+
+                  <label for ='Item discount'>Discount</label>
+                  <input ='number' name='discount' placeholder='Item discount' ng-model ='invenCtrl.newItem.discount' required>
+
+                  <button class='add' ='submit' name='Add item'>Add Item</button>
+
+                  <p ng-show='additem.name.$touched && !additem.name.$valid'>Please provide a name.</p>
+                  <p ng-show='additem.quantity.$touched && !additem.quantity.$valid'>Please provide a quantity.</p>
+                  <p ng-show='additem.discount.$touched && !additem.discount.$valid'>Please enter '0' for no discount.</p>
+                  <p ng-show='additem.price.$touched && !additem.price.$valid'>Please provide a price.</p>
+                  <p ng-show='additem.color.$touched &&!additem.color.$valid'>Please provide a color.</p>
+
+                </form>
           </section>
 
         <table class='table table-striped'>
             <tr>
                 <thead>
                     <th>
-                        <a href='#' ng-click='shopCtrl.sortType= "name"; sortReverse = !sortReverse'>
-                        NAME
-                      </a>
+                        <a href='#' ng-click='invenCtrl.sortType= "name"; sortReverse = !sortReverse'>NAME</a>
                     </th>
                     <th>
-                        <a href='#' ng-click='shopCtrl.sortType = "price"; sortReverse = !sortReverse'>
-                        PRICE</a>
+                        <a href='#' ng-click='invenCtrl.sortType = "price"; sortReverse = !sortReverse'>PRICE</a>
                     </th>
                     <th>
-                        <a href='#' ng-click='shopCtrl.sortType = "quantity"; sortReverse = !sortReverse'>
-                      QUANTITY</a>
-                    </th>
-                    <th class='change'>
-                        COLOR
+                        <a href='#' ng-click='invenCtrl.sortType = "quantity"; sortReverse = !sortReverse'>QUANTITY</a>
+                      </th>
+                    <th class='change'>COLOR
                     </th>
                 </thead>
             </tr>
             <tbody>
-                <tr ng-repeat='inventory in shopCtrl.inventory | orderBy:shopCtrl.sortType:sortReverse'>
+                <tr ng-repeat='inventory in invenCtrl.inventory | orderBy:invenCtrl.sortType:sortReverse'>
                     <th>{{inventory.name}}</th>
-                    <th>{{shopCtrl.priceAdj(inventory) | currency:'$':2}}
-                        <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'> </th>
+                    <th>{{invenCtrl.priceAdj(inventory) | currency:'$':2}}
+                        <img ng-show='inventory.discount > 0' src='https://tiy-learn-content.s3.amazonaws.com/98350f05-sale_2.png'>
+                    </th>
                     <th>{{inventory.quantity}}</th>
                     <th>{{inventory.color}}</th>
                 </tr>
@@ -86,7 +85,7 @@
 
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
     <script src='/js/shop.module.js'></script>
-    <script src='/js/shop.controller.js'></script>
+    <script src='/js/inventory.controller.js'></script>
   </body>
 
 </html>

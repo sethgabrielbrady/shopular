@@ -2,14 +2,14 @@
     'use strict';
 
     angular.module('shopular')
-        .controller('ShopController', ShopController);
+        .controller('InventoryController', InventoryController);
 
     let taxes = 0.0575;
 
     /**
      * [Holds the inventory array and the priceAdj function ]
      */
-    function ShopController() {
+    function InventoryController() {
 
         let clickCount = 0;
         let vm = this;
@@ -100,5 +100,5 @@
         }
 
 
-    } //belongs to ShopController
+    } 
 }());
