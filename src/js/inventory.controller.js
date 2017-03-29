@@ -59,41 +59,20 @@
                     item.name = 'rubbish bin';
                 }
 
-            })
-        }
+            });
+        };
+
 
         /**
-         * Add a new object to the inventory array. Will convert a string to a
-         * number for price, discount, and quantity inputs
-         * @param {Object} item
-         * @return {VOID}
+         * [addItem description]
+         * @param {[type]} item [description]
          */
-
         vm.addItem = function addItem(item) {
-            item.price = Number(item.price);
-            item.discount = Number(item.discount);
-            item.quantity = Number(item.quantity);
-
-            if (typeof(item) !== 'object' || typeof(item.name) !== 'string' ||
-                typeof(item.price) !== 'number' || typeof(item.discount) !== 'number' ||
-                typeof(item.quantity) !== 'number' || !(item.quantity) ||
-                !(item.price ) || !(item.discount) || typeof(item.color) !== 'string' ){
-                return;
-            }
-
-            let id = Date.now();
-
-            vm.inventory.push({
-                id: id,
-                name: item.name,
-                price: item.price,
-                quantity: item.quantity,
-                discount: item.discount,
-                color: item.color
-            });
+            InventoryService.addItem(item);
             vm.newItem = {};
             // invenCtrl.newItem.$setUntouched();
-        }
+        };
+
 
         /**
          * Grabs an array as an argument, looks for the index and if the
@@ -107,7 +86,7 @@
             vm.inventory.splice(index, 1);
           }
 
-        }
+        };
 
 
     }

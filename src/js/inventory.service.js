@@ -7,7 +7,7 @@
     function InventoryService(){
         console.log('here in Inventory service');
 
-
+      let newItem ={};
 
       let inventory = [
         { "id": 2957, "name": "widget", "price": 32, "quantity": 203, "color": "red", "discount": 31 },
@@ -25,12 +25,46 @@
         ];
 
         //TODO
-        //create a method to add new item
-        //
+        //change docblocks
 
 
-        //TODO
-        //create a method to getNew items
+        /**
+         * Add a new object to the inventory array. Will convert a string to a
+         * number for price, discount, and quantity inputs
+         * @param {Object} item
+         * @return {VOID}
+         */
+        function addItem(item){
+            item.price = Number(item.price);
+            item.discount = Number(item.discount);
+            item.quantity = Number(item.quantity);
+
+            if (typeof(item) !== 'object' || typeof(item.name) !== 'string' ||
+                typeof(item.price) !== 'number' || typeof(item.discount) !== 'number' ||
+                typeof(item.quantity) !== 'number' || !(item.quantity) ||
+                !(item.price ) || !(item.discount) || typeof(item.color) !== 'string' ){
+                return;
+            }
+
+            let id = Date.now();
+
+            inventory.push({
+                id: id,
+                name: item.name,
+                price: item.price,
+                quantity: item.quantity,
+                discount: item.discount,
+                color: item.color
+            });
+            newItem = {};
+            // invenCtrl.newItem.$setUntouched();
+        }
+
+
+        /**
+         * Gets the  data objects from the inventory array
+         * @return {Object} The inventory object
+         */
         function getInventory(){
           return inventory;
         }
@@ -40,13 +74,16 @@
         //create a method to remove items
         //
 
+
+
         //TODO
         //return your methods to make them available inside the controller
         //be sure to link everything correctly
 
 
         return {
-          getInventory: getInventory
+          getInventory: getInventory,
+          addItem: addItem
         }
     }
 }());
