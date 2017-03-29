@@ -1,39 +1,32 @@
 main {
-
-
     .table {
-
         max-width: 80%;
         margin: 0 auto;
-
 
         tbody {
             font-size: 1.25em;
         }
-
-
     }
 
-    button {
-        margin: 0 0 0.5% 10%;
+    button.btn {
+        margin: 0.5% 0 0.5% 10%;
     }
 
-    section{
-      border:2px solid rgb(41, 128, 185);
-      margin: 1% 0 1% 10%;
-      width:80%;
-      box-sizing: border-box;
+    button .add {
+        margin: none;
+    }
 
-      label{
-        width:7%;
-      }
-        input{
-        width:100%;
+    section {
+        margin: 1% 0 1% 10%;
+        width: 80%;
+        box-sizing: border-box;
+
+        input {
+            width: 100%;
         }
 
-        input.ng-invalid.ng-touched{
-          border: 1px solid #ff0000;
+        input.ng-invalid.ng-touched {
+            border: 1px solid #ff0000;
         }
     }
-
 }
