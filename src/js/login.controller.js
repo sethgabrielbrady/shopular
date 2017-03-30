@@ -19,5 +19,10 @@
             vm.newLogin = {};
         };
 
+        // vm.getLogin = function getLogin(){
+        // let name = LoginService.getLogin();
+        //     return name.name;
+        // };
+
     }
 }());

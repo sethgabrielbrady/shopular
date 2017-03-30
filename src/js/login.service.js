@@ -25,7 +25,7 @@
                 time: time
             });
 
-            localStorage.setItem('loginData', angular.toJson(login));
+            localStorage.setItem('loginData', angular.toJson(loginData));
         }
 
         /**

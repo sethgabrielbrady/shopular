@@ -19,6 +19,7 @@
           <label for ='User Name'>User Name</label>
           <input ='text' name='name' placeholder='User Name' class='form-control' ng-model ='loginCtrl.newLogin.name'>
 
+          <p>Welcome {{loginCtrl.getLogin}</p>
           <button class='btn btn-default' ='submit' name='Login' >Login</button>
         </form>
 
@@ -46,7 +47,7 @@
 
                   <label for ='Item color'>Color</label>
                   <p ng-show='additem.color.$touched &&!additem.color.$valid'>Please provide a color.</p>
-                  <input ='text' name='color' placeholder='Item color' ng-model='invenCtrl.newItem.color' required>
+                  <input ='text' name='color' placeholder='Item color' ng-model='invenCtrl.newItem.color'>
 
                   <label for ='Item discount'>Discount</label>
                   <p ng-show='additem.discount.$touched && !additem.discount.$valid'>Please enter '0' for no discount.</p>

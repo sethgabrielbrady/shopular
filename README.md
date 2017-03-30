@@ -23,9 +23,8 @@ bootstrap, sass, angular, git, javascript, html, css
 1. Even though the current build will only allow for 1 click event to change, Id like
 make it a toggle so that it can return to the original US dollars, text, naming.
 2. Display the user name and time they logged in.
-3. Fix the way html "binds??" sortType - remove the anchor tag
-4. Fix the test expressions on the inventory controller
-
+3. Fix sortType on the index.html- remove the anchor tag-add to <th>
+4. Fix the error handling on the addItem function on the inventory.controller
 ### Known Issues
 Removing an item only removes it from the table, not localStorage.
 Errors thrown when a hard refresh is done after creating an object through the

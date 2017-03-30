@@ -3,6 +3,8 @@
 
     angular.module('shopular').factory('InventoryService', InventoryService);
 
+
+
     function InventoryService() {
         console.log('here in Inventory service');
 
@@ -13,12 +15,13 @@
 
         /**
          * Add a new object to the inventory array. Will convert a string to a
-         * number for price, discount, and quantity inputs
+         * number for price, discount, and quantity inputs. Adds to localStorage as
+         * a string.
          * @param {Object} item
          * @return {VOID}
          */
         function addItem(item) {
-            item.price = Number(item.price);
+            item.price = Number(item.price);//Do a NaN  and (less than 0) check on all of these 
             item.discount = Number(item.discount);
             item.quantity = Number(item.quantity);
 
