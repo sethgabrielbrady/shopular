@@ -5,10 +5,17 @@
     color: rgb(243, 156, 18);
 
     h1 {
-        text-align-last: center;
+        text-align-last: left;
 
         small {
             color: rgb(243, 156, 18);
         }
     }
+    form {
+      width:10%;
+      input .form-control{
+        width:auto;
+      }
+    }
+
 }
