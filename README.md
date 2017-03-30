@@ -23,6 +23,8 @@ bootstrap, sass, angular, git, javascript, html, css
 1. Even though the current build will only allow for 1 click event to change, Id like
 make it a toggle so that it can return to the original US dollars, text, naming.
 2. Display the user name and time they logged in.
+3. Fix the way html "binds??" sortType - remove the anchor tag
+4. Fix the test expressions on the inventory controller
 
 ### Known Issues
 Removing an item only removes it from the table, not localStorage.
@@ -42,9 +44,3 @@ This is practice with the basics of ``Angular`` building a ``web application``
 for a shop's inventory. At the end of this project we should have a basic
 grasp of putting a couple of the pieces of ``Angular`` together to see data in
 our browser.
-
-
-
-
-### Data Link
-https://gist.github.com/jakerella/64cc09455245695585e96ce251497a60
