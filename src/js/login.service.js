@@ -37,9 +37,22 @@
             return loginData;
         }
 
+
+
+        function removeUser(user) {
+            let index = loginData.indexOf(user);
+                console.log(index);
+                console.log(user);
+                loginData.splice(index, 1);
+
+        }
+
+
+
         return {
             userLogin: userLogin,
-            getLogin: getLogin
+            getLogin: getLogin,
+            removeUser: removeUser
         };
 
 

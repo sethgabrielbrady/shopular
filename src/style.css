@@ -8,9 +8,8 @@
     .page-header h1 small {
       color: #f39c12; }
   .page-header form {
-    width: 10%; }
-    .page-header form input .form-control {
-      width: auto; }
+    display: inline;
+    margin: 0; }
 
 main .table {
   max-width: 80%;

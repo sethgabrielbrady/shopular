@@ -13,7 +13,6 @@
         vm.loginData = LoginService.getLogin();//get user
 
 
-
         vm.newLogin = {};
 
         vm.userLogin = function userLogin(info) {//add user
@@ -28,6 +27,9 @@
         // let name = LoginService.getLogin();
         //     return name.name;
         // };
-
+        vm.removeUser = function removeUser(user){
+          LoginService.removeUser(user);
+          // localStorage.removeItem(item);
+          };
     }
 }());

@@ -77,7 +77,7 @@
 
         vm.removeItem = function removeItem(item){
           InventoryService.removeItem(item);
-          localStorage.removeItem(item);
+          // localStorage.removeItem(item);
           };
 
 
