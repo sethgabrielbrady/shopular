@@ -4,12 +4,10 @@
     angular.module('shopular').factory('LoginService', LoginService);
 
     function LoginService() {
-        console.log('Hello from login service');
         // localStorage.clear();//this will clear local storage
         let newLogin = {};
 
         let loginData = JSON.parse(localStorage.getItem('loginData')) || [];//MY LOCAL STAROGE DATA
-        console.log(loginData);
 
         /**
          * Will pass the string data into the object
@@ -17,10 +15,8 @@
          * @return {void}
          */
         function userLogin(info) {
-            console.log(info);
 
             let time = Date.now();
-            console.log(time);
             loginData.push({
                 name: info.name,
                 time: time
@@ -41,10 +37,7 @@
 
         function removeUser(user) {
             let index = loginData.indexOf(user);
-                console.log(index);
-                console.log(user);
                 loginData.splice(index, 1);
-
         }
 
 
