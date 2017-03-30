@@ -60,12 +60,14 @@
         function removeItem(item) {
             if (item.quantity === 0) {
                 let index = inventory.indexOf(item);
+                console.log(index);
+                console.log(item);
                 inventory.splice(index, 1);
             }
-          }
+        }
 
 
-          return {
+        return {
             getInventory: getInventory,
             addItem: addItem,
             removeItem: removeItem

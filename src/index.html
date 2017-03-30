@@ -22,7 +22,7 @@
           <label for ='Password'>Password</label>
           <input ='text' name='pass' placeholder='Password' class='form-control' ng-model ='loginCtrl.newLogin.pass'>
 
-          <button class='btn btn-default' ='submit' name='Login'>Login</button>
+          <button class='btn btn-default' ='submit' name='Login' >Login</button>
         </form>
 
     </header>
@@ -85,7 +85,7 @@
                     <th>
                       <input type='number' name="input" ng-model='inventory.quantity' min="0" class='quantity'> </th>
                     <th>{{inventory.color}}</th>
-                    <th><button ng-click='invenCtrl.removeItem(inventory)' class='btn btn-default remove' type='button'>
+                    <th><button ng-click='invenCtrl.removeItem(inventory); localStorage.removeItem(inventory);' class='btn btn-default remove' type='button'>
                       Remove</button></th>
                 </tr>
             </tbody>
