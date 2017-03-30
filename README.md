@@ -5,6 +5,19 @@
 1. clone from github
 2. open in server in the source directory
 
+##HOMEWORK
+Go back to our Shopular project and let's add some tests.
+
+1. Set up testing using our Grunt build with Karma and Mocha
+2. Write tests for all controllers and services
+3. You need must have code coverage being reported in the grunt build
+  You do NOT have to have 100% coverage, you must have at least 50% coverage of all branches.
+
+## EPIC Mode
+
+Get 100% code coverage.
+
+
 
 ### Current Build
 The current build displays data in the form of a table on the view. Currently the data

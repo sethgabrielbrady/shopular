@@ -14,13 +14,13 @@
         <h1>SHOPULAR <br>
         <small>The most Shoptastic deals in the World!</small></h1>
 
-        <form  name ='newlogin' class='form-group form-inline' ng-submit='newlogin.$valid && loginCtrl.login(loginCtrl.newLogin);'>
+        <form  name ='newlogin' class='form-group form-inline' ng-submit='newlogin.$valid && loginCtrl.userLogin(loginCtrl.newLogin);'>
 
           <label for ='User Name'>User Name</label>
           <input ='text' name='name' placeholder='User Name' class='form-control' ng-model ='loginCtrl.newLogin.name'>
 
-          <p>Welcome {{loginCtrl.getLogin}</p>
-          <button class='btn btn-default' ='submit' name='Login' >Login</button>
+          <p ng-repeat='loginData in loginCtrl.loginData'>Welcome {{loginData.name}}</p>
+          <button class='btn btn-default' ='submit' name='Login'>Login</button>
         </form>
 
     </header>
@@ -31,7 +31,7 @@
           United Kingdom </button>
 
           <section>
-              <form  name='additem' ng-submit='additem.$valid && invenCtrl.addItem(invenCtrl.newItem); additem.$setPristine(); additem.$setUntouched();'novalidate>
+              <form name='additem' ng-submit='additem.$valid && invenCtrl.addItem(invenCtrl.newItem); additem.$setPristine(); additem.$setUntouched();'novalidate>
 
                   <label for ='Item name'>Name</label>
                   <p ng-show='additem.name.$touched && !additem.name.$valid'>Please provide a name.</p>

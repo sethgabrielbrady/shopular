@@ -10,12 +10,17 @@
     function LoginController(LoginService) {
         let vm = this;
 
-        vm.loginData = LoginService.getLogin();
+        vm.loginData = LoginService.getLogin();//get user
+
+
+
         vm.newLogin = {};
 
-        vm.login = function login(info) {
-            console.log('Hello from controller');
-            LoginService.login(info);
+        vm.userLogin = function userLogin(info) {//add user
+
+            console.log('Hello from userLogin controller');
+
+            LoginService.userLogin(info);
             vm.newLogin = {};
         };
 
