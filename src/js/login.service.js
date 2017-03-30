@@ -22,7 +22,6 @@
 
             loginData.push({
                 name: info.name,
-                pass: info.pass,
                 time: time
             });
 
