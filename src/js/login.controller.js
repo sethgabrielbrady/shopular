@@ -17,8 +17,6 @@
 
         vm.userLogin = function userLogin(info) {//add user
 
-            console.log('Hello from userLogin controller');
-
             LoginService.userLogin(info);
             vm.newLogin = {};
         };

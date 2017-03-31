@@ -74,9 +74,13 @@
             // invenCtrl.newItem.$setUntouched();
         };
 
-
-        vm.removeItem = function removeItem(item){
-          InventoryService.removeItem(item);
+        /**
+         * pass data from inventory services fileadd
+         * @param  {[type]} item [description]
+         * @return {[type]}      [description]
+         */
+        vm.removeItems = function removeItems(item){
+          InventoryService.removeItems(item);
           // localStorage.removeItem(item);
           };
 

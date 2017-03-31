@@ -84,7 +84,7 @@
                     <th>
                       <input type='number' name="input" ng-model='inventory.quantity' min="0" class='quantity'> </th>
                     <th>{{inventory.color}}</th>
-                    <th><button ng-click='invenCtrl.removeItem(inventory); localStorage.removeItem(inventory);' class='btn btn-default remove' type='button'>
+                    <th><button ng-click='invenCtrl.removeItems(inventory); localStorage.removeItems(inventory);' class='btn btn-default remove' type='button'>
                       Remove</button></th>
                 </tr>
             </tbody>

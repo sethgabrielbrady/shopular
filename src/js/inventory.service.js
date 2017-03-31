@@ -21,7 +21,7 @@
          * @return {VOID}
          */
         function addItem(item) {
-            item.price = Number(item.price);//Do a NaN  and (less than 0) check on all of these 
+            item.price = Number(item.price);//Do a NaN  and (less than 0) check on all of these
             item.discount = Number(item.discount);
             item.quantity = Number(item.quantity);
 
@@ -60,12 +60,15 @@
          * @param  {Array} item
          * @return {Void}
          */
-        function removeItem(item) {
+        function removeItems(item) {
+          console.log('from remove item');
             if (item.quantity === 0) {
                 let index = inventory.indexOf(item);
                 console.log(index);
                 console.log(item);
                 inventory.splice(index, 1);
+                // localStorage.removeItem(item);
+
             }
         }
 
@@ -73,7 +76,7 @@
         return {
             getInventory: getInventory,
             addItem: addItem,
-            removeItem: removeItem
+            removeItems: removeItems
         };
     }
 }());
