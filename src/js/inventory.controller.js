@@ -34,6 +34,8 @@
             return ((item.price - item.discount) * (vm.taxes + 1));
         };
 
+
+
         /**
          * Will change the word color to colour on the button click
          * @return {VOID}
@@ -41,6 +43,8 @@
         vm.changeCountry = function changeCountry() {
             document.querySelector('.change').innerHTML = 'COLOUR';
         };
+
+
 
 
         /**
@@ -64,9 +68,12 @@
         };
 
 
+
+
         /**
-         * [addItem description]
-         * @param {[type]} item [description]
+         * Gets the addItem fn from InventoryService and points vm.addItem
+         * to it
+         * @param {Object} item Object passed to addItem
          */
         vm.addItem = function addItem(item) {
             InventoryService.addItem(item);
@@ -74,14 +81,16 @@
             // invenCtrl.newItem.$setUntouched();
         };
 
+
+
         /**
-         * pass data from inventory services fileadd
-         * @param  {[type]} item [description]
+         * Gets the removeItems fn from InventoryService and points vm.removeItems
+         * @param  {Object} item [description]
          * @return {[type]}      [description]
          */
         vm.removeItems = function removeItems(item){
           InventoryService.removeItems(item);
-          // localStorage.removeItem(item);
+          //localStorage.removeItem(item);
           };
 
 

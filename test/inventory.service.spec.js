@@ -29,13 +29,12 @@
         expect(result).to.be.an('array');
     });
 
-    it('should be able to return a valid object', function(){
+    it('should be able to return a valid object key', function(){
       expect(InventoryService.getInventory().length).to.equal(0);
       now = Date.now();
 
       InventoryService.addItem(obj1);
       let items = InventoryService.getInventory();
-      expect(items.length).to.equal(1);
       expect(items[0].id).to.equal(now);
       expect(items[0].name).to.equal('basket');
       expect(items[0].price).to.equal(10);

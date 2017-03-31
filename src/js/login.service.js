@@ -8,11 +8,11 @@
         let newLogin = {};
 
         let loginData = JSON.parse(localStorage.getItem('loginData')) || [];//MY LOCAL STAROGE DATA
-
+        console.log(typeof(loginData));
         /**
          * Will pass the string data into the object
-         * @param  {string} info text input string
-         * @return {void}
+         * @param  {String} info text input string
+         * @return {Void}
          */
         function userLogin(info) {
 
@@ -38,8 +38,8 @@
         function removeUser(user) {
             let index = loginData.indexOf(user);
                 loginData.splice(index, 1);
-        }
 
+              }
 
 
         return {
@@ -48,7 +48,7 @@
             removeUser: removeUser
         };
 
-
+//mockLocalStorage
 
     }
 }());

@@ -6,10 +6,9 @@
 
 
     function InventoryService() {
-        console.log('here in Inventory service');
 
         let newItem = {};
-
+        let removeData;
         let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
 
 
@@ -54,6 +53,9 @@
             return inventory;
         }
 
+
+
+
         /**
          * Grabs an array as an argument, looks for the index and if the
          * quantity is equal to 0, will allow for the deletion of the row
@@ -61,16 +63,24 @@
          * @return {Void}
          */
         function removeItems(item) {
-          console.log('from remove item');
+          console.log('from remove item', item);
             if (item.quantity === 0) {
                 let index = inventory.indexOf(item);
                 console.log(index);
                 console.log(item);
                 inventory.splice(index, 1);
-                // localStorage.removeItem(item);
-
-            }
+                //getItem from localStorage and store it ina  string
+                removeData = localStorage.getItem('inventory', angular.toJson(inventory));
+                // console.log('removing',removeData);
+                // console.log('remove data is ', typeof(removeData) );
+                // console.log(removeData.indexOf(item));
+                removeData = localStorage.setItem('inventory', angular.toJson(inventory));
+                //re set it using setItem
+                //this will be that data that is used for your tests
+              }
         }
+
+        
 
 
         return {
