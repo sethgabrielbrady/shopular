@@ -38,7 +38,6 @@
         function removeUser(user) {
             let index = loginData.indexOf(user);
                 loginData.splice(index, 1);
-
               }
 
 

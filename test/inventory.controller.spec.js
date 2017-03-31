@@ -22,7 +22,7 @@
         }));
 
         beforeEach(inject(function($controller) {
-            mockInventoryService.getInventory = function inventory() {
+            mockInventoryService.getInventory = function getInventory() {
                 return [obj1];
             };
 
@@ -76,7 +76,7 @@
           // expect(InventoryController.changeTable(obj1.price)).to.equal(price);
         });
 
-        
+
 
 
 

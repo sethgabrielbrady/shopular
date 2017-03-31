@@ -11,8 +11,6 @@
         let vm = this;
 
         vm.loginData = LoginService.getLogin();//get user
-
-
         vm.newLogin = {};
 
         vm.userLogin = function userLogin(info) {//add user

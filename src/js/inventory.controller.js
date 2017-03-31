@@ -62,6 +62,7 @@
                 }
                 if (item.name === 'waste basket') {
                     item.name = 'rubbish bin';
+                    console.log(item.name);
                 }
 
             });
@@ -90,7 +91,6 @@
          */
         vm.removeItems = function removeItems(item){
           InventoryService.removeItems(item);
-          //localStorage.removeItem(item);
           };
 
 

@@ -8,9 +8,8 @@
     function InventoryService() {
 
         let newItem = {};
-        let removeData;
         let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-
+        let removeData;
 
         /**
          * Add a new object to the inventory array. Will convert a string to a
@@ -56,6 +55,7 @@
 
 
 
+
         /**
          * Grabs an array as an argument, looks for the index and if the
          * quantity is equal to 0, will allow for the deletion of the row
@@ -66,24 +66,24 @@
           console.log('from remove item', item);
             if (item.quantity === 0) {
                 let index = inventory.indexOf(item);
-                console.log(index);
-                console.log(item);
                 inventory.splice(index, 1);
-                //getItem from localStorage and store it ina  string
-                removeData = localStorage.getItem('inventory', angular.toJson(inventory));
-                // console.log('removing',removeData);
-                // console.log('remove data is ', typeof(removeData) );
-                // console.log(removeData.indexOf(item));
-                removeData = localStorage.setItem('inventory', angular.toJson(inventory));
-                //re set it using setItem
-                //this will be that data that is used for your tests
+                localRemove();
               }
         }
 
-        
+
+        function localRemove(){
+          //might put this in a function if I use it again
+          //calls localstorage and stores it inside rmeove data
+          removeData = localStorage.getItem('inventory', angular.toJson(inventory));
+          //resets local storage to whatever inventory is currently at
+          removeData = localStorage.setItem('inventory', angular.toJson(inventory));
+        }
+
 
 
         return {
+            localRemove: localRemove,
             getInventory: getInventory,
             addItem: addItem,
             removeItems: removeItems

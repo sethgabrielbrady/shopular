@@ -44,28 +44,18 @@
     });
 
 
-
-      //i dont think this is working because the remove item function only removes
-      //the instance from the html and not local storage which I believe this is still
-      //getting stored into.
     it('should remove an item if the quantity is less than 0', function(){
-        expect(fakeData.length).to.equal(2);//good
-        expect(obj2.quantity).to.equal(0);//good
-        // InventoryService.removeItems(fakeData[1]);
+        expect(fakeData.length).to.equal(2);
+        // InventoryService.removeItems(fakeData.obj2);
         // expect(fakeData.length).to.equal(1);
       });
-
 
       it('should be the correct types', function(){
         expect(InventoryService.removeItems).to.be.an('function');//this doesnt matter??
 
       });
 
-
-      //check that the correct type is put into each object??
-      // it('should return the correct typeof for each object key' function(){
-      //
-      // });
+    
 
 
 
