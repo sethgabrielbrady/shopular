@@ -15,7 +15,10 @@
     function LoginController(LoginService) {
         let vm = this;
 
-        vm.loginData = LoginService.getLogin(); //get user
+        vm.loginData = function getLogin(){
+          LoginService.getLogin();
+          };//get user
+
         vm.newLogin = {};
 
 
@@ -26,8 +29,8 @@
          * @return {Voif}
          */
         vm.userLogin = function userLogin(info) { //add user
-            LoginService.userLogin(info);
-            vm.newLogin = {};
+             LoginService.userLogin(info);
+            // vm.newLogin = {};
         };
 
         /**
