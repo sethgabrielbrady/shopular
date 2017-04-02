@@ -6,12 +6,8 @@
 
     let taxes = 0.0575;
 
+    InventoryController.$inject = ['InventoryService'];
 
-
-    InventoryController.$inject=['InventoryService'];
-    /**
-     * [Holds the inventory array and the priceAdj function ]
-     */
     function InventoryController(InventoryService) {
 
         let clickCount = 0;
@@ -24,8 +20,8 @@
 
 
         /**
-         * takes in the inventory object, subtracts the discount property value from the
-         * price property value, add that to the price prop value multiplied
+         * Takes in the inventory object, subtracts the discount property value from the
+         * price property value, adds that to the price prop value multiplied
          * by the the taxes variable.
          * @param  {Object} item [uses the inventory object]
          * @return {Number}      [returns a price adjusted for discounts and taxes
@@ -37,7 +33,8 @@
 
 
         /**
-         * Will change the word color to colour on the button click
+         * Will change the word color to colour in the table
+         * on the 'United Kingdom ' button click
          * @return {VOID}
          */
         vm.changeCountry = function changeCountry() {
@@ -45,11 +42,10 @@
         };
 
 
-
-
         /**
-         *Will change mulitply the inventory price value by 1.5 and change
-         *'waste basket' to 'rubbish bin' on the buttone click
+         *Will mulitply the inventory price value by 1.5 and change
+         *'waste basket' to 'rubbish bin' on the button click. A counter
+         *was included so that this could only be done once.
          * @return {VOID}
          */
         vm.changeTable = function changeTable() {
@@ -58,40 +54,39 @@
                     item.price = item.price * 1.5;
                     clickCount++;
                     console.log(item.price);
+                  }
 
-                }
                 if (item.name === 'waste basket') {
                     item.name = 'rubbish bin';
                     console.log(item.name);
                 }
-
-            });
+              });
         };
 
 
-
-
         /**
-         * Gets the addItem fn from InventoryService and points vm.addItem
-         * to it
-         * @param {Object} item Object passed to addItem
-         */
+        **Points vm.addItem to fn that takes an object and passes it to
+        * removeItems fn inside InventoryService. Afterwards it puts
+        * an empty object inside vm.newItem
+        * @param {Object} item  object that gets passed to removeItems
+        * @return {Void}
+        */
         vm.addItem = function addItem(item) {
             InventoryService.addItem(item);
             vm.newItem = {};
-            // invenCtrl.newItem.$setUntouched();
         };
 
 
 
         /**
-         * Gets the removeItems fn from InventoryService and points vm.removeItems
-         * @param  {Object} item [description]
-         * @return {[type]}      [description]
+         * Points vm.removeItems to a that takes an object and passes it to
+         * removeItems fn inside InventoryService
+         * @param  {Object} item object that gets passed to removeItems
+         * @return {Void}
          */
-        vm.removeItems = function removeItems(item){
-          InventoryService.removeItems(item);
-          };
+        vm.removeItems = function removeItems(item) {
+            InventoryService.removeItems(item);
+        };
 
 
 

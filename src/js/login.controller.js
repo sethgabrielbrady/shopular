@@ -7,25 +7,37 @@
     LoginController.$inject = ['LoginService'];
 
 
+
+    /**
+     * Main function that controls the controller
+     * @param {Service} LoginService The service that contains the data
+     */
     function LoginController(LoginService) {
         let vm = this;
 
-        vm.loginData = LoginService.getLogin();//get user
+        vm.loginData = LoginService.getLogin(); //get user
         vm.newLogin = {};
 
-        vm.userLogin = function userLogin(info) {//add user
 
+        /**
+         * Points vm.userLogin to a fn that takes an string and passes it to
+         * userLogin fn inside LoginService
+         * @param  {String} info  Takes a string for the username
+         * @return {Voif}
+         */
+        vm.userLogin = function userLogin(info) { //add user
             LoginService.userLogin(info);
             vm.newLogin = {};
         };
 
-        // vm.getLogin = function getLogin(){
-        // let name = LoginService.getLogin();
-        //     return name.name;
-        // };
-        vm.removeUser = function removeUser(user){
-          LoginService.removeUser(user);
-          // localStorage.removeItem(item);
-          };
+        /**
+         * Points vm.removeUser to a fn that takes an object and passes it to
+         * removeUser fn inside LoginService
+         * @param  {Object} user [User object inside the data array]
+         * @return {Void}
+         */
+        vm.removeUser = function removeUser(user) {
+            LoginService.removeUser(user);
+        };
     }
 }());

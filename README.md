@@ -30,18 +30,19 @@ displayed by clicking on the table header. The user is also able to change the q
 a user name and password to 'login' to the system.
 
 ### Technology Used
-bootstrap, sass, angular, git, javascript, html, css
+bootstrap, sass, angular, git, javascript, html, css, grunt, jshint, karm, mocha,
+chai, babel, contrib-concat
 
 ### TODO
 1. Even though the current build will only allow for 1 click event to change, Id like
 make it a toggle so that it can return to the original US dollars, text, naming.
-2. Display the user name and time they logged in.
 3. Fix sortType on the index.html- remove the anchor tag-add to <th>
 4. Fix the error handling on the addItem function on the inventory.controller
-### Known Issues
-Removing an item only removes it from the table, not localStorage.
-Errors thrown when a hard refresh is done after creating an object through the
-login input field.
+
+### Known Issues 04/01/17
+Clicking the "United Kingdom" button does not change the price of the
+"rubbsih bin"- which was previously the "waste basket".
+
 
 ## 03/29/17
 Building further on the same assignment using ``services(factory)`` , ``localStorage``,
@@ -56,3 +57,7 @@ This is practice with the basics of ``Angular`` building a ``web application``
 for a shop's inventory. At the end of this project we should have a basic
 grasp of putting a couple of the pieces of ``Angular`` together to see data in
 our browser.
+
+
+## Links
+https://github.com/gruntjs/grunt-contrib-concat

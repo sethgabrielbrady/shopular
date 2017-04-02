@@ -10,7 +10,8 @@
         let newItem = {};
         let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
         let removeData;
-        console.log(inventory);
+
+
         /**
          * Add a new object to the inventory array. Will convert a string to a
          * number for price, discount, and quantity inputs. Adds to localStorage as
@@ -23,6 +24,8 @@
             item.discount = Number(item.discount);
             item.quantity = Number(item.quantity);
 
+
+            //fix these
             if (typeof(item) !== 'object' || typeof(item.name) !== 'string' ||
                 typeof(item.price) !== 'number' || typeof(item.discount) !== 'number' ||
                 typeof(item.quantity) !== 'number' || !(item.quantity) ||
@@ -53,9 +56,6 @@
         }
 
 
-
-
-
         /**
          * Grabs an array as an argument, looks for the index and if the
          * quantity is equal to 0, will allow for the deletion of the row
@@ -67,16 +67,19 @@
             if (item.quantity === 0) {
                 let index = inventory.indexOf(item);
                 inventory.splice(index, 1);
-                localRemove();
+                localStorage.setItem('inventory', angular.toJson(inventory));
+
               }
         }
 
-
+        /**
+         * Points removeData to the string data inside local storage as 'inventroy'
+         * Sets that data back into localStorage as inventory. Used for testing?
+         * Might not even need this
+         * @return {void}
+         */
         function localRemove(){
-          //might put this in a function if I use it again
-          //calls localstorage and stores it inside rmeove data
           removeData = localStorage.getItem('inventory', angular.toJson(inventory));
-          //resets local storage to whatever inventory is currently at
           removeData = localStorage.setItem('inventory', angular.toJson(inventory));
         }
 

@@ -4,10 +4,9 @@
     angular.module('shopular').factory('LoginService', LoginService);
 
     function LoginService() {
-        // localStorage.clear();//this will clear local storage
-        let newLogin = {};
+        // let newLogin = {};
 
-        let loginData = JSON.parse(localStorage.getItem('loginData')) || [];//MY LOCAL STAROGE DATA
+        let loginData = JSON.parse(localStorage.getItem('loginData')) || []; //MY LOCAL STAROGE DATA
         console.log(typeof(loginData));
         /**
          * Will pass the string data into the object
@@ -15,13 +14,11 @@
          * @return {Void}
          */
         function userLogin(info) {
-
             let time = Date.now();
             loginData.push({
                 name: info.name,
                 time: time
             });
-
             localStorage.setItem('loginData', angular.toJson(loginData));
         }
 
@@ -33,12 +30,16 @@
             return loginData;
         }
 
-
-
+        /**
+         * Removes the last user object from the loginData array. This is called
+         * inside the html after a new user has be entered
+         * @param  {Object} user The last user object inside the loginData array
+         * @return {Void}
+         */
         function removeUser(user) {
             let index = loginData.indexOf(user);
-                loginData.splice(index, 1);
-              }
+            loginData.splice(index, 1);
+        }
 
 
         return {
@@ -47,7 +48,7 @@
             removeUser: removeUser
         };
 
-//mockLocalStorage
+        //mockLocalStorage
 
     }
 }());
