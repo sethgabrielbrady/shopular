@@ -30,7 +30,7 @@
             };
 
             mockLoginService.getLogin = function getLogin(obj1) {
-                mockLoginService.userLogin.numTimesCalled++;
+                mockLoginService.getLogin.numTimesCalled++;
                 return;
             };
             mockLoginService.removeUser = function removeUser(obj1) {
@@ -51,24 +51,17 @@
         });
 
         it('should call userLogin when adding a user', function() {
-            LoginController.userLogin(obj1); //calling additem within InventoryController
+            expect(mockLoginService.userLogin.numTimesCalled).to.equal(0);
+            LoginController.userLogin(obj1);
             expect(mockLoginService.userLogin.numTimesCalled).to.equal(1);
         });
 
         it('should call removeUser when removing a user', function() {
-            LoginController.removeUser({}); //calling additem within InventoryController
+            LoginController.removeUser({});
             expect(mockLoginService.removeUser.numTimesCalled).to.equal(1);
         });
 
-        it('should return an array when getLogin is called', function() {
-            // LoginController.userLogin();
-            // let length = LoginController.loginData.length;
-            expect(LoginController.loginData.length).to.equal(0);
-            LoginController.userLogin(name);
-            // expect(length).to.equal(1);
 
-
-        });
 
     });
 

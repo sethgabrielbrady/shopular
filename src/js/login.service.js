@@ -4,7 +4,7 @@
     angular.module('shopular').factory('LoginService', LoginService);
 
     function LoginService() {
-        // let newLogin = {};
+        let newLogin = {};
 
         let loginData = JSON.parse(localStorage.getItem('loginData')) || []; //MY LOCAL STAROGE DATA
         console.log(typeof(loginData));
@@ -48,7 +48,7 @@
             removeUser: removeUser
         };
 
-        
+
 
     }
 }());
