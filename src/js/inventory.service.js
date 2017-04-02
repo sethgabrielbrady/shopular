@@ -10,7 +10,7 @@
         let newItem = {};
         let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
         let removeData;
-
+        console.log(inventory);
         /**
          * Add a new object to the inventory array. Will convert a string to a
          * number for price, discount, and quantity inputs. Adds to localStorage as
