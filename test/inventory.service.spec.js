@@ -31,9 +31,6 @@
 
     describe('inventory service', function() {
 
-        // it('should add 4-7', function(){
-        //   expect(4-7).to.equal(-3);
-        // }); //sanity check- make sure the testing works
         let InventoryService;
 
         beforeEach(module('shopular'));

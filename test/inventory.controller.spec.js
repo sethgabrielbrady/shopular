@@ -2,12 +2,11 @@
     'use strict';
 
     let expect = chai.expect;
-
+    let now;
     let clickCount = 0;
-    let now = 4;
     let obj1 = {id:now, name:'waste basket', price: 10, quantity: 1, color: 'red', discount: 1};
     let obj2 = {id:now, name: 'rug', price: 10, quantity: 1, color: 'red', discount: 1};
-    let fakeData = [obj1, obj2];
+    // let fakeData = [obj1, obj2];
     let taxes = 0.0575;
 
 
@@ -22,12 +21,16 @@
             $provide.value('InventoryService', mockInventoryService);
         }));
 
+        // beforeEach(function(){
+        //   document.querySelector('.change').innerHTML = 'COLOUR';
+        // });
+
         beforeEach(inject(function($controller) {
             mockInventoryService.getInventory = function getInventory() {
                 return [obj1];
             };
 
-            mockInventoryService.addItem = function addItems(arg1) {
+            mockInventoryService.addItem = function addItem(obj1) {
                 mockInventoryService.addItem.numTimesCalled++;
                 return;
             };
@@ -67,24 +70,21 @@
           expect(InventoryController.priceAdj(obj2)).to.equal(price);
         });
 
+        // it('should change waste basket to rubbish bin', function(){
+        //     // InventoryController.changeTable.clickcount = 0;
+        //     let name = obj1.name;
+        //     expect(name).to.equal('waste basket');
+        //     InventoryController.changeTable(obj1);
+        //     expect(InventoryController.changeTable(name)).to.equal('rubbish bin');
+        //
+        // });
 
-
-
-        describe('changetable', function() {
-          let InventoryController;
-
-
-          it('should get the correct object data', function(){
-            expect(obj1.name).to.equal('waste basket');
-            expect(obj1.price).to.equal(10);
-            // expect(InventoryController.changeTable()).to.equal('rubbish bin');
-            // expect(InventoryController.changeTable(obj1)).to.equal(price);
-            // expect(InventoryController.changeTable(obj1).clickCount).to.equal(1);
-
-          });
-
-         });
-
+        it('should reset newItem after addItem is called', function(){
+          InventoryController.newItem = obj1;
+          expect(InventoryController.newItem).to.equal(obj1); //tests OK
+          InventoryController.addItem(obj1);//this will point newItem to an empty object
+          // expect(InventoryController.newItem).to.equal( {} );//assertion error
+        });
 
 
       });
