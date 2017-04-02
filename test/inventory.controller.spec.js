@@ -3,6 +3,7 @@
 
     let expect = chai.expect;
 
+    let clickCount = 0;
     let now = 4;
     let obj1 = {id:now, name:'waste basket', price: 10, quantity: 1, color: 'red', discount: 1};
     let obj2 = {id:now, name: 'rug', price: 10, quantity: 1, color: 'red', discount: 1};
@@ -34,7 +35,6 @@
                 mockInventoryService.removeItems.numTimesCalled++;
                 return;
             };
-            let clickCount = 0;
             mockInventoryService.addItem.numTimesCalled = 0;
             mockInventoryService.removeItems.numTimesCalled = 0;
             InventoryController = $controller('InventoryController');
@@ -67,16 +67,23 @@
           expect(InventoryController.priceAdj(obj2)).to.equal(price);
         });
 
-        it('should get the correct object data', function(){
-          expect(obj1.name).to.equal('waste basket');
-          expect(obj1.price).to.equal(10);
-          //this doesnt really change the values. Only changes how the html see it
-          // let price = (obj1.price * 1.5);
-          //expect(InventoryController.changeTable(obj1.name)).to.equal('rubbish bin');
-          // expect(InventoryController.changeTable(obj1.price)).to.equal(price);
-        });
 
 
+
+        describe('changetable', function() {
+          let InventoryController;
+
+
+          it('should get the correct object data', function(){
+            expect(obj1.name).to.equal('waste basket');
+            expect(obj1.price).to.equal(10);
+            // expect(InventoryController.changeTable()).to.equal('rubbish bin');
+            // expect(InventoryController.changeTable(obj1)).to.equal(price);
+            // expect(InventoryController.changeTable(obj1).clickCount).to.equal(1);
+
+          });
+
+         });
 
 
 

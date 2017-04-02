@@ -72,21 +72,21 @@
               }
         }
 
-        /**
-         * Points removeData to the string data inside local storage as 'inventroy'
-         * Sets that data back into localStorage as inventory. Used for testing?
-         * Might not even need this
-         * @return {void}
-         */
-        function localRemove(){
-          removeData = localStorage.getItem('inventory', angular.toJson(inventory));
-          removeData = localStorage.setItem('inventory', angular.toJson(inventory));
-        }
+        // /**
+        //  * Points removeData to the string data inside local storage as 'inventroy'
+        //  * Sets that data back into localStorage as inventory. Used for testing?
+        //  * Might not even need this
+        //  * @return {void}
+        //  */
+        // function localRemove(){
+        //   removeData = localStorage.getItem('inventory', angular.toJson(inventory));
+        //   removeData = localStorage.setItem('inventory', angular.toJson(inventory));
+        // }
 
 
 
         return {
-            localRemove: localRemove,
+            // localRemove: localRemove,
             getInventory: getInventory,
             addItem: addItem,
             removeItems: removeItems

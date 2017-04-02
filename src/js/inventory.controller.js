@@ -48,7 +48,7 @@
          *was included so that this could only be done once.
          * @return {VOID}
          */
-        vm.changeTable = function changeTable() {
+        vm.changeTable = function changeTable(item) {
             angular.forEach(vm.inventory, function(item) {
                 if (clickCount === 0) {
                     item.price = item.price * 1.5;

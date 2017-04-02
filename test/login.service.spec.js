@@ -44,8 +44,8 @@
 
 
 
-
-
+      // it('should fail when not given a username', function(done){
+      // testex1
 
 
 
