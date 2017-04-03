@@ -15,18 +15,19 @@ Each object contains id, name, price, quantity, color, and discount properties. 
 that when clicked will change the price to British Pounds, the item "waste basket"
 to "rubbish bin", and the word color to "colour", which is located in the
 table title. In addition, the user is able change the order in which the items are
-displayed by clicking on the table header. The user is also able to change the quantity of items, remove any item that has a quantity of 0, and is able to add new items to the table. The user is also able to input
-a user name and password to 'login' to the system.
+displayed by clicking on the table header. The user is also able to change the quantity of items,
+remove any item that has a quantity of 0, and is able to add new items to the table. T
+he user is also able to input a user name and password to 'login' to the system.
 
 ### Technology Used
 bootstrap, sass, angular, git, javascript, html, css, grunt, jshint, karma, mocha,
-chai, babel
+chai, babel, concat,
 
 ### TODO
 1. Even though the current build will only allow for 1 click event to change, Id like
 make it a toggle so that it can return to the original US dollars, text, naming.
-3. Fix sortType on the index.html- remove the anchor tag-add to <th>
-4. Fix the error handling on the addItem function on the inventory.controller
+2. Fix the error handling on the addItem function on the inventory.controller
+
 
 ### Known Issues 04/01/17
 Clicking the "United Kingdom" button does not change the price of the
