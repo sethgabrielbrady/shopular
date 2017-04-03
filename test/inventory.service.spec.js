@@ -27,7 +27,6 @@
         color: 'black',
         discount: 1
     };
-    let fakeData = [];
 
     describe('inventory service', function() {
 

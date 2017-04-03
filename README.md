@@ -6,7 +6,7 @@
 2. run 'npm install'
 3. run ' grunt build'
 4. open a server in the build directory
-5. 'Done' message will appear on a good build. 
+5. 'Done' message will appear on a correct build. 
 
 
 ### Current Build

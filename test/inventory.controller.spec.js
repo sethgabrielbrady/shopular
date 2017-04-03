@@ -56,18 +56,18 @@
 
 
             beforeEach(function() {
-                    InventoryController.clickCount = 0;
-                    return;
-                });
-                afterEach(function() {
-                  InventoryController.clickCount = 1;
-                    return;
-                });
+                InventoryController.clickCount = 0;
+                return;
+            });
+            afterEach(function() {
+                InventoryController.clickCount = 1;
+                return;
+            });
 
         }));
 
 
-       it('should be the correct types', function() {
+        it('should be the correct types', function() {
             expect(InventoryController.newItem).to.be.an('object');
             expect(InventoryController.addItem).to.be.a('function');
             expect(InventoryController.removeItems).to.be.a('function');
@@ -110,7 +110,7 @@
         });
 
         it('should change waste basket to rubbish bin and price to be 15', function() {
-            expect(obj1.name).to.be.equal('waste basket'); 
+            expect(obj1.name).to.be.equal('waste basket');
             InventoryController.changeTable(obj1);
             expect(obj1.name).to.be.equal('rubbish bin');
             expect(obj1.price).to.be.equal(15);
