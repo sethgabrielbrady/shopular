@@ -1,0 +1,41 @@
+.page-header {
+  width: 80%;
+  background-color: #2980b9;
+  margin: 0 auto;
+  color: #f39c12; }
+  .page-header h1 {
+    text-align-last: left; }
+    .page-header h1 small {
+      color: #f39c12; }
+  .page-header form {
+    display: inline;
+    margin: 0; }
+
+main .table {
+  max-width: 80%;
+  margin: 0 auto; }
+  main .table tbody {
+    font-size: 1.25em; }
+    main .table tbody input.quantity {
+      margin-left: 2em;
+      width: 4em; }
+main button.btn {
+  margin: 0.5% 0 0.5% 10%; }
+main button .add {
+  margin: none; }
+main section {
+  margin: 1% 0 3% 10%;
+  width: 80%;
+  box-sizing: border-box; }
+  main section input {
+    width: 100%; }
+  main section input.ng-invalid.ng-touched {
+    border: 1px solid #ff0000; }
+
+footer {
+  background-color: #2980b9;
+  height: 7em;
+  width: 80%;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=style.css.map */
