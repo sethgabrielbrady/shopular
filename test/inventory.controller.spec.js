@@ -4,7 +4,6 @@
     let expect = chai.expect;
     let clickCount = 0;
     let now;
-    // let clickCount = 0;
     let obj1 = {
         id: now,
         name: 'waste basket',
@@ -21,7 +20,6 @@
         color: 'red',
         discount: 1
     };
-    // let fakeData = [obj1, obj2];
     let taxes = 0.0575;
 
 
@@ -36,10 +34,6 @@
         beforeEach(module(function($provide) {
             $provide.value('InventoryService', mockInventoryService);
         }));
-
-        // beforeEach(function(){
-        //   document.querySelector('.change').innerHTML = 'COLOUR';
-        // });
 
         beforeEach(inject(function($controller) {
             mockInventoryService.getInventory = function getInventory() {
@@ -73,9 +67,7 @@
         }));
 
 
-        //TESTS
-
-        it('should be the correct types', function() {
+       it('should be the correct types', function() {
             expect(InventoryController.newItem).to.be.an('object');
             expect(InventoryController.addItem).to.be.a('function');
             expect(InventoryController.removeItems).to.be.a('function');
@@ -85,12 +77,12 @@
         });
 
         it('should call addItem when adding', function() {
-            InventoryController.addItem({}); //calling additem within InventoryController
+            InventoryController.addItem({});
             expect(mockInventoryService.addItem.numTimesCalled).to.equal(1);
         });
 
         it('should call removeItems when removing and item', function() {
-            InventoryController.removeItems({}); //calling additem within InventoryController
+            InventoryController.removeItems({});
             expect(mockInventoryService.removeItems.numTimesCalled).to.equal(1);
         });
 
@@ -101,9 +93,8 @@
 
         it('should reset newItem after addItem is called', function() {
             InventoryController.newItem = obj1;
-            expect(InventoryController.newItem).to.equal(obj1); //tests OK
-            InventoryController.addItem(obj1); //this will point newItem to an empty object
-            // expect(InventoryController.newItem).to.equal( {} );//assertion error
+            expect(InventoryController.newItem).to.equal(obj1);
+            InventoryController.addItem(obj1);
         });
 
         it('should return a value of false', function() {
@@ -118,15 +109,8 @@
             expect(InventoryController.taxes).to.be.equal(0.0575);
         });
 
-        // it('should return a value of 1 after fn is called', function() {
-        //     expect(InventoryController.clickCount).to.be.equal(0);
-        //     InventoryController.changeTable(obj2);
-        //     expect(InventoryController.clickCount).to.be.equal(1);
-        // });
-
-
         it('should change waste basket to rubbish bin and price to be 15', function() {
-            expect(obj1.name).to.be.equal('waste basket'); //tests that object 1 name is in fact 'waste basket'
+            expect(obj1.name).to.be.equal('waste basket'); 
             InventoryController.changeTable(obj1);
             expect(obj1.name).to.be.equal('rubbish bin');
             expect(obj1.price).to.be.equal(15);
@@ -134,7 +118,7 @@
         });
 
         it('should only change the item.price to 1.5*item.price', function() {
-            expect(obj2.price).to.equal(20); //tests that obj2 price is in fact 10
+            expect(obj2.price).to.equal(20);
             InventoryController.changeTable(obj2);
             // expect(obj2.price).to.be.equal(30);
         });

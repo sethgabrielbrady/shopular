@@ -4,7 +4,6 @@
     angular.module('shopular').factory('LoginService', LoginService);
 
     function LoginService() {
-        // let newLogin = {};
 
         let loginData = JSON.parse(localStorage.getItem('loginData')) || []; //MY LOCAL STAROGE DATA
         console.log(typeof(loginData));
@@ -23,7 +22,7 @@
         }
 
         /**
-         * Simpply returns the object array in localStorage
+         * Simply returns the object array in localStorage
          * @return {Object} localStorage object array
          */
         function getLogin() {

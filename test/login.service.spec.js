@@ -65,9 +65,5 @@
             expect(users.length).to.equal(1);
         });
 
-
-
     });
-
-
 }());

@@ -7,9 +7,7 @@
 
     function InventoryService() {
 
-        // let newItem = {};
         let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-        // let removeData;
 
 
         /**
@@ -20,12 +18,12 @@
          * @return {VOID}
          */
         function addItem(item) {
-            item.price = Number(item.price);//Do a NaN  and (less than 0) check on all of these
+            item.price = Number(item.price);
             item.discount = Number(item.discount);
             item.quantity = Number(item.quantity);
 
 
-            //fix these
+
             if (typeof(item) !== 'object' || typeof(item.name) !== 'string' ||
                 typeof(item.price) !== 'number' || typeof(item.discount) !== 'number' ||
                 typeof(item.quantity) !== 'number' || !(item.quantity) ||
@@ -72,21 +70,8 @@
               }
         }
 
-        // /**
-        //  * Points removeData to the string data inside local storage as 'inventroy'
-        //  * Sets that data back into localStorage as inventory. Used for testing?
-        //  * Might not even need this
-        //  * @return {void}
-        //  */
-        // function localRemove(){
-        //   removeData = localStorage.getItem('inventory', angular.toJson(inventory));
-        //   removeData = localStorage.setItem('inventory', angular.toJson(inventory));
-        // }
-
-
 
         return {
-            // localRemove: localRemove,
             getInventory: getInventory,
             addItem: addItem,
             removeItems: removeItems
