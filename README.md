@@ -3,7 +3,8 @@
 
 ### Set Up
 1. clone from github
-2. open in server in the source directory
+2. open in server in the build directory
+
 
 
 
