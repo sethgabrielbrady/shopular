@@ -79,7 +79,7 @@
                 };
 
                 /**
-                 * Points vm.removeItems to a that takes an object and passes it to
+                 * Points vm.removeItems and takes an object then passes it to
                  * removeItems fn inside InventoryService
                  * @param  {Object} item object that gets passed to removeItems
                  * @return {Void}

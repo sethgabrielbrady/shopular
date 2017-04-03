@@ -4,6 +4,8 @@ module.exports = function(gruntConfig) { //can be an anonymous fn
     gruntConfig.initConfig({
 
        clean: ['build/'],
+
+
         concat: {
             alljs: {
                 options: {
@@ -22,7 +24,7 @@ module.exports = function(gruntConfig) { //can be an anonymous fn
                     sourceMap: true //maps the sourcecode we are converting
                 },
                 files: {
-                    'build/js/app.js': 'src/js/**/*.js'
+                    'build/js/app.js': 'build/js/app.js'
                 }
 
             }
@@ -89,7 +91,6 @@ module.exports = function(gruntConfig) { //can be an anonymous fn
 
     });
 
-    //we can run this ONE task to autoload all the others
     require('load-grunt-tasks')(gruntConfig);
     gruntConfig.loadNpmTasks('grunt-karma');
     gruntConfig.loadNpmTasks('grunt-babel');
