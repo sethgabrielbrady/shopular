@@ -7,7 +7,7 @@
         name: 'Test',
         time: now
     };
-    let name= 'Seth';
+    // let name= 'Seth';
 
 
     describe('login controller', function() {

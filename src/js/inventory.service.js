@@ -7,9 +7,9 @@
 
     function InventoryService() {
 
-        let newItem = {};
+        // let newItem = {};
         let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-        let removeData;
+        // let removeData;
 
 
         /**

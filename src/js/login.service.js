@@ -4,7 +4,7 @@
     angular.module('shopular').factory('LoginService', LoginService);
 
     function LoginService() {
-        let newLogin = {};
+        // let newLogin = {};
 
         let loginData = JSON.parse(localStorage.getItem('loginData')) || []; //MY LOCAL STAROGE DATA
         console.log(typeof(loginData));
@@ -36,6 +36,7 @@
          * @param  {Object} user The last user object inside the loginData array
          * @return {Void}
          */
+
         function removeUser(user) {
             let index = loginData.indexOf(user);
             loginData.splice(index, 1);

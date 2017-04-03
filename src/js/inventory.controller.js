@@ -30,8 +30,6 @@
                 return ((item.price - item.discount) * (vm.taxes + 1));
             };
 
-
-
             /**
              * Will change the word color to colour in the table
              * on the 'United Kingdom ' button click
@@ -48,7 +46,7 @@
              *was included so that this could only be done once.
              * @return {VOID}
              */
-            vm.changeTable = function changeTable(item) {
+            vm.changeTable = function changeTable() {
                 angular.forEach(vm.inventory, function(item) {
                         if (clickCount === 0) {
 
@@ -68,8 +66,6 @@
                         console.log(clickCount);
                 };
 
-
-
                 /**
                  **Points vm.addItem to fn that takes an object and passes it to
                  * removeItems fn inside InventoryService. Afterwards it puts
@@ -82,8 +78,6 @@
                     vm.newItem = {};
                 };
 
-
-
                 /**
                  * Points vm.removeItems to a that takes an object and passes it to
                  * removeItems fn inside InventoryService
@@ -94,8 +88,5 @@
                     InventoryService.removeItems(item);
                 };
 
-
-
-
-            }
+              }
         }());

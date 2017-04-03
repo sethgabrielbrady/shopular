@@ -3,18 +3,31 @@
 module.exports = function(gruntConfig) { //can be an anonymous fn
     gruntConfig.initConfig({
 
-        clean: ['build/'],
-        copy: {
-            copyhtml: {
-                files: [{
-                    cwd: 'src', //start from 'src'
-                    src: ['*.html'],
-                    dest: 'build/',
-                    expand: true
-                }]
+       clean: ['build/'],
+        concat: {
+            alljs: {
+                options: {
+                    sourceMap: true
+                },
+                src: ['src/js/shopular.module.js', 'src/js/**/*.js'],
+                dest: 'build/js/app.js'
+            }
+        },
+
+
+        babel: {
+            all: {
+                options: {
+                    presets: ['es2015'],
+                    sourceMap: true //maps the sourcecode we are converting
+                },
+                files: {
+                    'build/js/app.js': 'src/js/**/*.js'
+                }
 
             }
         },
+
 
         sass: {
             all: {
@@ -26,16 +39,17 @@ module.exports = function(gruntConfig) { //can be an anonymous fn
             }
         },
 
-        jshint: {
-            source: {
-                options: {
-                    jshintrc: '.jshintrc'
-                },
-                files: {
-                    src: ['src/**/*.js'] //this src is option for the plug
-                }
+        jshint:{
+          source:{
+            options:{
+              'predef': ['angular'],
+              jshintrc:'.jshintrc'
+            },
+              files:{
+                  src:['src/**/*.js']
+              },
             }
-        },
+          },
 
         karma: {
             all: {
@@ -45,7 +59,7 @@ module.exports = function(gruntConfig) { //can be an anonymous fn
                     files: [
                         'node_modules/angular/angular.js',
                         'node_modules/angular-mocks/angular-mocks.js',
-                        'src/js/shop.module.js',
+                        'src/js/shopular.module.js',
                         'src/js/**/*.js',
                         'test/**/*.spec.js'
                     ],
@@ -59,15 +73,26 @@ module.exports = function(gruntConfig) { //can be an anonymous fn
                     }
                 }
             }
-        }
+        },
+
+        copy: {
+            copyhtml: {
+                files: [{
+                    cwd: 'src', //start from 'src'
+                    src: ['*.html'],
+                    dest: 'build/',
+                    expand: true
+                }]
+
+            }
+        },
 
     });
 
     //we can run this ONE task to autoload all the others
     require('load-grunt-tasks')(gruntConfig);
-    // grunt.loadNpmTasks('grunt-karma'); //don't forget to add other things after testing
-    // grunt.loadNpmTasks('grunt-babel');
-    // grunt.loadNpmTasks('grunt-contrib-concat');
-    //do I use loadNpmTasks for grunt watch or just 'grun watch'
-    gruntConfig.registerTask('build', ['jshint', 'karma', 'clean', 'copy', 'sass']);
+    gruntConfig.loadNpmTasks('grunt-karma');
+    gruntConfig.loadNpmTasks('grunt-babel');
+    gruntConfig.loadNpmTasks('grunt-contrib-concat');
+    gruntConfig.registerTask('build', ['jshint','karma','clean','concat', 'babel', 'copy', 'sass']);
 };

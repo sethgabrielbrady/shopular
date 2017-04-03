@@ -5,18 +5,6 @@
 1. clone from github
 2. open in server in the source directory
 
-##HOMEWORK
-Go back to our Shopular project and let's add some tests.
-
-1. Set up testing using our Grunt build with Karma and Mocha
-2. Write tests for all controllers and services
-3. You need must have code coverage being reported in the grunt build
-  You do NOT have to have 100% coverage, you must have at least 50% coverage of all branches.
-
-## EPIC Mode
-
-Get 100% code coverage.
-
 
 
 ### Current Build
@@ -30,8 +18,8 @@ displayed by clicking on the table header. The user is also able to change the q
 a user name and password to 'login' to the system.
 
 ### Technology Used
-bootstrap, sass, angular, git, javascript, html, css, grunt, jshint, karm, mocha,
-chai, babel, contrib-concat
+bootstrap, sass, angular, git, javascript, html, css, grunt, jshint, karma, mocha,
+chai, babel
 
 ### TODO
 1. Even though the current build will only allow for 1 click event to change, Id like
@@ -41,7 +29,7 @@ make it a toggle so that it can return to the original US dollars, text, naming.
 
 ### Known Issues 04/01/17
 Clicking the "United Kingdom" button does not change the price of the
-"rubbsih bin"- which was previously the "waste basket".
+"rubbish bin"- which was previously the "waste basket".
 
 
 ## 03/29/17
