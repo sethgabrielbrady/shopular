@@ -3,9 +3,10 @@
 
 ### Set Up
 1. clone from github
-2. open in server in the build directory
-
-
+2. run 'npm install'
+3. run ' grunt build'
+4. open a server in the build directory
+5. 'Done' message will appear on a good build. 
 
 
 ### Current Build
@@ -19,9 +20,7 @@ displayed by clicking on the table header. The user is also able to change the q
 remove any item that has a quantity of 0, and is able to add new items to the table. T
 he user is also able to input a user name and password to 'login' to the system.
 
-### Technology Used
-bootstrap, sass, angular, git, javascript, html, css, grunt, jshint, karma, mocha,
-chai, babel, concat,
+
 
 ### TODO
 1. Even though the current build will only allow for 1 click event to change, Id like
