@@ -27,7 +27,7 @@
          * Points vm.userLogin to a fn that takes an string and passes it to
          * userLogin fn inside LoginService
          * @param  {String} info  Takes a string for the username
-         * @return {Voif}
+         * @return {Void}
          */
         vm.userLogin = function userLogin(info) { //add user
              LoginService.userLogin(info);
