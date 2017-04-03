@@ -1,7 +1,8 @@
-build/
-notes/
-node_modules/
 
 .sass-cache
 .jshintrc
 .DS_Store
+
+build/
+notes/
+node_modules/
