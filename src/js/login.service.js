@@ -7,6 +7,7 @@
 
         let loginData = JSON.parse(localStorage.getItem('loginData')) || []; //MY LOCAL STAROGE DATA
         console.log(typeof(loginData));
+        
         /**
          * Will pass the string data into the object
          * @param  {String} info text input string
