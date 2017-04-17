@@ -7,7 +7,7 @@
         name: 'Test',
         time: now
     };
-    
+
     describe('login controller', function() {
 
         let LoginController;
@@ -22,7 +22,7 @@
         beforeEach(inject(function($controller) {
 
             mockLoginService.userLogin = function userLogin() {
-              mockLoginService.userLogin.numTimesCalled++;
+                mockLoginService.userLogin.numTimesCalled++;
 
                 return [obj1];
             };
@@ -58,8 +58,6 @@
             LoginController.removeUser({});
             expect(mockLoginService.removeUser.numTimesCalled).to.equal(1);
         });
-
-
 
     });
 

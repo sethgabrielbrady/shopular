@@ -66,15 +66,12 @@
             expect(items[0].color).to.equal('red');
         });
 
-
         it('should add an item to the array', function() {
             InventoryService.addItem(obj1);
             InventoryService.addItem(obj2);
             let invent = InventoryService.getInventory();
             expect(invent.length).to.equal(2);
         });
-
-
 
         it('should remove an item from the array', function() {
             InventoryService.addItem(obj3);
@@ -86,7 +83,6 @@
             InventoryService.removeItems(obj3);
             expect(invent.length).to.equal(1);
         });
-
 
     });
 

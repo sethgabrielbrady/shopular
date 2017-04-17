@@ -6,8 +6,6 @@
 
     LoginController.$inject = ['LoginService'];
 
-
-
     /**
      * Main function that controls the controller
      * @param {Service} LoginService The service that contains the data
@@ -21,7 +19,6 @@
         //   };//get user
 
         vm.newLogin = {};
-
 
         /**
          * Points vm.userLogin to a fn that takes an string and passes it to

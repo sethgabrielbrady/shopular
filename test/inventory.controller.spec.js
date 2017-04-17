@@ -123,10 +123,6 @@
             // expect(obj2.price).to.be.equal(30);
         });
 
-
-
-
-
     });
 
 }());
